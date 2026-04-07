@@ -1,43 +1,58 @@
-# Astro Starter Kit: Minimal
+# asc-engineering
 
-```sh
-pnpm create astro@latest -- --template minimal
+Personal website and resume for Dr. Andreas Schlapbach, built with Astro and the [MCP Orchestrator Design System](../mcp-orchestrator-design-system).
+
+**Live:** https://asc-engineering.netlify.app
+
+## Stack
+
+- [Astro 6](https://astro.build/) — static site generator
+- [TailwindCSS v4](https://tailwindcss.com/) — utility-first CSS via `@tailwindcss/vite`
+- [@mcp-orchestrator/design-system](../mcp-orchestrator-design-system) — local component library (Card, Badge, Avatar, Stack, Header, Footer, Button, IconButton, Container)
+
+## Development
+
+```bash
+pnpm install
+pnpm dev        # localhost:4321
+pnpm build      # output → dist/
+pnpm preview    # preview the build
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Deploy
 
-## 🚀 Project Structure
+Hosted on Netlify. To redeploy manually:
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+pnpm build
+netlify deploy --dir=dist --prod --site=9395bcfb-314c-45ee-9da8-c369bfbbfe63
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Project structure
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```
+src/
+  pages/
+    index.astro       # single-page resume
+  styles/
+    global.css        # Tailwind v4 setup + design tokens + @source for design system
+public/
+  favicon.svg
+  favicon.ico
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Design system integration
 
-## 🧞 Commands
+The design system is linked as a local `file:` dependency. Tailwind v4 requires an explicit `@source` directive in `global.css` to scan the design system's component files (node_modules are excluded from automatic scanning by default):
 
-All commands are run from the root of the project, from a terminal:
+```css
+@source "../../node_modules/@mcp-orchestrator/design-system/src";
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Dark mode uses Tailwind's class strategy configured via:
 
-## 👀 Want to learn more?
+```css
+@variant dark (&:where(.dark, .dark *));
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The `dark` class is toggled on `<html>` by a script that reads from `localStorage` (with OS preference as fallback).
