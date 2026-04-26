@@ -4,127 +4,7 @@ import Container from '@mcp-orchestrator/design-system/components/Container.astr
 import Card from '@mcp-orchestrator/design-system/components/Card.astro';
 import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
 import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
-import { readdirSync } from 'fs';
-import { join } from 'path';
-
-type Pub = { text: string; href?: string };
-
-// Metadata mapping for PDF filenames to full bibliographic references
-const pubMetadata: Record<string, string> = {
-  // Theses
-  'Schl01a.pdf':
-    'A. Schlapbach: Generic XMI Support for the MOOSE Reengineering Environment. Bachelor thesis, University of Bern, 2001.',
-  'Schl03a.pdf':
-    'A. Schlapbach: Enabling White-Box Reuse in a Pure Composition Language. Diplomarbeit, University of Bern, 2002.',
-  // Preprints (arXiv)
-  '2602.18764v2.pdf':
-    'A. Schlapbach: The Convergence of Schema-Guided Dialogue Systems and the Model Context Protocol. arXiv preprint arXiv:2602.18764, 2026.',
-  '2603.24747v1.pdf':
-    'A. Schlapbach: Formal Semantics for Agentic Tool Protocols: A Process Calculus Approach. arXiv preprint arXiv:2603.24747, 2026.',
-  // Books
-  'MainLDAR.pdf':
-    'A. Schlapbach: Writer Identification and Writer Verification. Dissertationen zur Künstlichen Intelligenz, Aka, Berlin. ISBN: 0817646701.',
-  // Journal Articles
-  'ijprai2008.pdf':
-    'M. Liwicki, A. Schlapbach, and H. Bunke: Automatic Gender Detection — Combining On-line and Off-line Systems. International Journal of Pattern Recognition and Artificial Intelligence, World Scientific, 2008.',
-  'onlineWIJournal.pdf':
-    'A. Schlapbach and H. Bunke: A Writer Identification System for On-line Whiteboard Data. Journal of Pattern Recognition, vol. 41(7), pp. 2381–2397, Elsevier, 2008.',
-  'journalPaperFinal.pdf':
-    'A. Schlapbach and H. Bunke: Off-line Writer Identification and Verification Using Gaussian Mixture Models. In Machine Learning in Document Analysis and Recognition, vol. 11, pp. 409–428, Springer, 2008.',
-  // Book Chapters
-  'offWriIdeVerGMM.pdf':
-    'A. Schlapbach and H. Bunke: A Writer Identification and Verification System Using HMM Based Recognizers. Pattern Analysis & Applications, vol. 10(1), pp. 33–43, Springer, 2007.',
-  // Conference Papers
-  'iwfhr06.pdf':
-    'A. Schlapbach and H. Bunke: Off-line Writer Verification: A Comparison of an HMM and a GMM Based System. Proc. 10th Int. Workshop on Frontiers in Handwriting Recognition, pp. 275–280, 2006.',
-  'eusipco08.pdf':
-    'A. Schlapbach, F. Wettstein, and H. Bunke: Automatic Estimation of the Readability of Handwritten Text. Proc. 16th European Signal Processing Conference, pp. 1–5, 2008.',
-  'icdar05.pdf':
-    'A. Schlapbach, V. Kilchherr, and H. Bunke: Improving Writer Identification by Means of Feature Selection and Extraction. Proc. 8th Int. Conf. on Document Analysis and Recognition, pp. 131–135, 2005.',
-  'icpr04.pdf':
-    'A. Schlapbach and H. Bunke: Off-line Handwriting Identification Using HMM Based Recognizers. Proc. 17th Int. Conf. on Pattern Recognition, pp. 654–658, 2004.',
-  'das06.pdf':
-    'M. Liwicki, A. Schlapbach, H. Bunke, et al.: Writer Identification for Smart Meeting Room Systems. Proc. 7th IAPR Workshop on Document Analysis Systems, pp. 186–195, 2006.',
-  'LNCS-3872.pdf':
-    'A. Schlapbach and H. Bunke: Off-line Writer Identification Using Gaussian Mixture Models. Proc. 18th Int. Conf. on Pattern Recognition, pp. 992–995, 2006.',
-  'igs05.pdf':
-    'A. Schlapbach and H. Bunke: Writer Identification Using an HMM-Based Handwriting Recognition System. Proc. 12th Conf. Int. Graphonomics Society, pp. 138–142, 2005.',
-  'icpr06.pdf':
-    'A. Schlapbach and H. Bunke: Off-line Writer Identification Using Gaussian Mixture Models. Proc. 18th Int. Conf. on Pattern Recognition, pp. 992–995, 2006.',
-  'iwfhr04.pdf':
-    'A. Schlapbach and H. Bunke: Using HMM Based Recognizers for Writer Identification and Verification. Proc. 9th Int. Workshop on Frontiers in Handwriting Recognition, pp. 167–172, 2004.',
-  'icpr08.pdf':
-    'A. Schlapbach, F. Wettstein, and H. Bunke: Estimating the Readability of Handwritten Text — A Support Vector Regression Based Approach. Nominated for best paper award. Proc. 19th Int. Conf. on Pattern Recognition, pp. 1–4, 2008.',
-  // Presentations
-  'iwfhr06Slides.pdf':
-    'A. Schlapbach and H. Bunke: Off-line Writer Verification: A Comparison of an HMM and a GMM Based System. Presentation slides, 10th Int. Workshop on Frontiers in Handwriting Recognition, 2006.',
-};
-
-function getPDFsFromDir(dirPath: string): string[] {
-  try {
-    const files = readdirSync(dirPath);
-    return files
-      .filter((f) => f.endsWith('.pdf'))
-      .sort()
-      .reverse();
-  } catch {
-    return [];
-  }
-}
-
-const pubsDir = join(process.cwd(), '..', 'publications');
-const thesesFiles = getPDFsFromDir(join(pubsDir, 'theses'));
-const preprints = getPDFsFromDir(join(pubsDir, 'preprints'));
-const booksFiles = getPDFsFromDir(join(pubsDir, 'books'));
-const journalFiles = getPDFsFromDir(join(pubsDir, 'journal-articles'));
-const bookChapterFiles = getPDFsFromDir(join(pubsDir, 'book-chapters'));
-const conferenceFiles = getPDFsFromDir(join(pubsDir, 'conference-papers'));
-const presentationFiles = getPDFsFromDir(join(pubsDir, 'presentations'));
-
-const publications: {
-  theses: Pub[];
-  inReview: Pub[];
-  booksAndJournals: Pub[];
-  conferencesPapers: Pub[];
-  presentations: Pub[];
-} = {
-  theses: thesesFiles.map((f) => ({
-  
-    text: pubMetadata[f] || `${f.replace('.pdf', '')} (Thesis)`,
-    href: `https://github.com/schlpbch/publications/raw/main/theses/${f}`,
-  })),
-  inReview: [
-    ...preprints.map((f) => ({
-      text: pubMetadata[f] || `${f.replace('.pdf', '')} (Preprint)`,
-      href: `https://github.com/schlpbch/publications/raw/main/preprints/${f}`,
-    })),
-    {
-      text: 'A. Schlapbach: Collinearity and Cluster Stability in Transport Economics, Evidence from Aviation and Rail.',
-    },
-  ],
-  booksAndJournals: [
-    ...booksFiles.map((f) => ({
-      text: pubMetadata[f] || `${f.replace('.pdf', '')} (Book)`,
-      href: `https://github.com/schlpbch/publications/raw/main/books/${f}`,
-    })),
-    ...journalFiles.map((f) => ({
-      text: pubMetadata[f] || `${f.replace('.pdf', '')} (Journal)`,
-      href: `https://github.com/schlpbch/publications/raw/main/journal-articles/${f}`,
-    })),
-    ...bookChapterFiles.map((f) => ({
-      text: pubMetadata[f] || `${f.replace('.pdf', '')} (Book Chapter)`,
-      href: `https://github.com/schlpbch/publications/raw/main/book-chapters/${f}`,
-    })),
-  ],
-  conferencesPapers: conferenceFiles.map((f) => ({
-    text: pubMetadata[f] || `${f.replace('.pdf', '')} (Conference Paper)`,
-    href: `https://github.com/schlpbch/publications/raw/main/conference-papers/${f}`,
-  })),
-  presentations: presentationFiles.map((f) => ({
-    text: pubMetadata[f] || `${f.replace('.pdf', '')} (Presentation)`,
-    href: `https://github.com/schlpbch/publications/raw/main/presentations/${f}`,
-  })),
-};
+import { publications } from '../data/publications';
 ---
 
 <BaseLayout
@@ -171,7 +51,6 @@ const publications: {
                         target="_blank"
                         rel="noopener"
                         class="ml-1.5 inline-flex items-center gap-0.5 text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-xs font-medium transition-colors"
-                        aria-label="Open preprint"
                       >
                         <svg
                           class="w-3 h-3"
@@ -191,7 +70,7 @@ const publications: {
           </Stack>
         </Card>
 
-        <!-- Books & Journals -->
+        <!-- Books, Chapters & Journals -->
         <Card variant="default" size="md">
           <Stack
             direction="horizontal"
@@ -203,7 +82,7 @@ const publications: {
               Books, Chapters &amp; Journals
             </h3>
             <Badge intent="success" variant="default" size="sm" shape="pill"
-              >5 publications</Badge
+              >{publications.booksAndJournals.length} publications</Badge
             >
           </Stack>
           <Stack direction="vertical" size="sm">
@@ -221,7 +100,6 @@ const publications: {
                         target="_blank"
                         rel="noopener"
                         class="ml-1.5 inline-flex items-center gap-0.5 text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-xs font-medium transition-colors"
-                        aria-label="Open PDF"
                       >
                         <svg
                           class="w-3 h-3"
@@ -271,7 +149,6 @@ const publications: {
                         target="_blank"
                         rel="noopener"
                         class="ml-1.5 inline-flex items-center gap-0.5 text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-xs font-medium transition-colors"
-                        aria-label="Open PDF"
                       >
                         <svg
                           class="w-3 h-3"
@@ -321,7 +198,6 @@ const publications: {
                         target="_blank"
                         rel="noopener"
                         class="ml-1.5 inline-flex items-center gap-0.5 text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-xs font-medium transition-colors"
-                        aria-label="Open PDF"
                       >
                         <svg
                           class="w-3 h-3"
@@ -369,7 +245,6 @@ const publications: {
                         target="_blank"
                         rel="noopener"
                         class="ml-1.5 inline-flex items-center gap-0.5 text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-xs font-medium transition-colors"
-                        aria-label="Open PDF"
                       >
                         <svg
                           class="w-3 h-3"
