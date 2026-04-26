@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@mcp-orchestrator/design-system": "file:../mcp-orchestrator-design-system",
-    "astro": "^6.1.4",
-    "tailwindcss": "^4.2.2"
+    "astro": "^6.1.9",
+    "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.2.2"
+    "@tailwindcss/vite": "^4.2.4"
   }
 }

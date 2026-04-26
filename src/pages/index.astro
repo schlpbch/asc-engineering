@@ -12,81 +12,7 @@ import Card from '@mcp-orchestrator/design-system/components/Card.astro';
   <section class="py-20 border-b border-slate-100 dark:border-slate-800">
     <Container maxWidth="4xl" size="sm">
 
-      <!-- PROPOSAL 1: Rounded Card with Shadow (ACTIVE) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
-        <!-- Left: Content -->
-        <div class="space-y-6">
-          <Stack direction="vertical" align="start" size="lg">
-            <Avatar initials="AS" size="xl" shape="rounded" className="bg-accent-800" />
-            <div>
-              <Stack direction="horizontal" align="center" size="sm" className="flex-wrap">
-                <h1 class="text-3xl font-bold tracking-tight">Dr. Andreas Schlapbach</h1>
-                <Badge intent="primary" variant="default" size="sm" shape="pill">PhD</Badge>
-              </Stack>
-              <p class="mt-1 text-lg text-accent-700 dark:text-accent-400 font-medium">
-                AI/ML Initiative Lead &amp; Enterprise Architect · SBB
-              </p>
-              <p class="mt-3 text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                25+ years building large-scale distributed systems for Swiss public transportation.
-                Currently leading AI/ML initiatives at SBB's Passenger Division — designing agentic
-                ecosystems with MCP, operationalizing LLMs at scale, and defining international
-                open standards for rail distribution. PhD in Computer Science, University of Bern.
-              </p>
-              <div class="mt-4 flex flex-col gap-2">
-                <!-- Location -->
-                <span class="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
-                  <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  Muri bei Bern, Switzerland
-                </span>
-                <!-- Resume download & Contact links -->
-                <div class="flex flex-col gap-3 mt-2">
-                  <a href="/resume.pdf" download class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-accent-700 dark:bg-accent-600 text-white hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors text-sm font-medium w-fit">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    Download Resume
-                  </a>
-                </div>
-                <!-- Contact icons -->
-                <div class="flex flex-row items-center gap-1">
-                  <a href="mailto:schlpbch@gmail.com" aria-label="Email schlpbch@gmail.com" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </a>
-                  <a href="https://github.com/schlpbch" target="_blank" rel="noopener" aria-label="GitHub profile" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                    </svg>
-                  </a>
-                  <a href="https://linkedin.com/in/andreas-schlapbach" target="_blank" rel="noopener" aria-label="LinkedIn profile" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                  </a>
-                  <a href="https://discord.com/users/schlpbch" target="_blank" rel="noopener" aria-label="Discord: schlpbch" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.001.022.015.043.032.055a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Stack>
-        </div>
-        <!-- Right: Portrait in Card -->
-        <Card variant="default" size="md" className="h-fit">
-          <img src="/portrait.png" alt="Dr. Andreas Schlapbach" class="w-full h-auto rounded-lg object-cover" />
-        </Card>
-      </div>
-
-      <!-- PROPOSAL 2: Floating with Accent Border (COMMENTED OUT)
+      <!-- PROPOSAL 2: Floating with Accent Border (COMMENTED OUT) -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 items-start">
         <div class="sm:col-span-2 space-y-6">
           <Stack direction="vertical" align="start" size="lg">
@@ -152,82 +78,10 @@ import Card from '@mcp-orchestrator/design-system/components/Card.astro';
         </div>
         <div class="sticky top-20">
           <div class="rounded-lg overflow-hidden shadow-lg border-4 border-accent-700 dark:border-accent-400">
-            <img src="/portrait.png" alt="Dr. Andreas Schlapbach" class="w-full h-auto object-cover" />
+            <img src="/portrait.jpg" alt="Dr. Andreas Schlapbach" class="w-full h-auto object-cover" />
           </div>
         </div>
       </div>
-      -->
-
-      <!-- PROPOSAL 3: Aspect-Ratio with Gradient (COMMENTED OUT)
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
-        <div class="space-y-6">
-          <Stack direction="vertical" align="start" size="lg">
-            <Avatar initials="AS" size="xl" shape="rounded" className="bg-accent-800" />
-            <div>
-              <Stack direction="horizontal" align="center" size="sm" className="flex-wrap">
-                <h1 class="text-3xl font-bold tracking-tight">Dr. Andreas Schlapbach</h1>
-                <Badge intent="primary" variant="default" size="sm" shape="pill">PhD</Badge>
-              </Stack>
-              <p class="mt-1 text-lg text-accent-700 dark:text-accent-400 font-medium">
-                AI/ML Initiative Lead &amp; Enterprise Architect · SBB
-              </p>
-              <p class="mt-3 text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                25+ years building large-scale distributed systems for Swiss public transportation.
-                Currently leading AI/ML initiatives at SBB's Passenger Division — designing agentic
-                ecosystems with MCP, operationalizing LLMs at scale, and defining international
-                open standards for rail distribution. PhD in Computer Science, University of Bern.
-              </p>
-              <div class="mt-4 flex flex-col gap-2">
-                <span class="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
-                  <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  Muri bei Bern, Switzerland
-                </span>
-                <div class="flex flex-col gap-3 mt-2">
-                  <a href="/resume.pdf" download class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-accent-700 dark:bg-accent-600 text-white hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors text-sm font-medium w-fit">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    Download Resume
-                  </a>
-                </div>
-                <div class="flex flex-row items-center gap-1">
-                  <a href="mailto:schlpbch@gmail.com" aria-label="Email schlpbch@gmail.com" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </a>
-                  <a href="https://github.com/schlpbch" target="_blank" rel="noopener" aria-label="GitHub profile" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                    </svg>
-                  </a>
-                  <a href="https://linkedin.com/in/andreas-schlapbach" target="_blank" rel="noopener" aria-label="LinkedIn profile" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                  </a>
-                  <a href="https://discord.com/users/schlpbch" target="_blank" rel="noopener" aria-label="Discord: schlpbch" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.001.022.015.043.032.055a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Stack>
-        </div>
-        <div class="relative rounded-xl overflow-hidden aspect-[3/4]">
-          <img src="/portrait.png" alt="Dr. Andreas Schlapbach" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent"></div>
-        </div>
-      </div>
-      -->
 
     </Container>
   </section>

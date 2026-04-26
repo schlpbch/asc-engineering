@@ -15,7 +15,7 @@ const experience = [
       'Conceived, designed and implemented an ecosystem of 10+ domain-expert AI agents (trip planning, booking, weather, events, hotels) using MCP protocols and intelligent federation over dynamically discovered schema relationships.',
       'Operating agent ecosystem at scale: 1,000+ tool-to-tool dependencies managed deterministically, failure modes recoverable without human intervention.',
       'Rolled out Spec-Driven Development (SDD) to 25+ teams across Java/Spring, Next.js/Angular, iOS/Android, SAP, Snowflake and ServiceNow stacks.',
-      'Operationalizing AWS Bedrock for mission-critical use; member of SBB\'s AI/ML Centre of Competence.',
+      "Operationalizing AWS Bedrock for mission-critical use; member of SBB's AI/ML Centre of Competence.",
     ],
   },
   {
@@ -24,7 +24,7 @@ const experience = [
     location: 'Bern, Switzerland',
     period: 'Mar 2021 – Feb 2025',
     bullets: [
-      'Designed and built the next generation of SBB\'s web presence, one of the three most visited sites in Switzerland.',
+      "Designed and built the next generation of SBB's web presence, one of the three most visited sites in Switzerland.",
       'Staffed and led three feature teams, one platform team and one design system team.',
       'Established a headless frontend stack (React/Next.js, Web Components) with cloud-edge infrastructure (AWS CloudFront, Lambda, WAF, Shield).',
       'Consolidated frontend APIs from Adobe AEM, Adobe Commerce, SAP Sales Cloud, and ServiceNow into an enterprise GraphQL graph.',
@@ -48,8 +48,8 @@ const experience = [
     period: 'Oct 2017 – Present',
     bullets: [
       'Drove high-level architecture for myRIDE and the next-generation reservation system for Swiss public transportation.',
-      'Initiated and conceptualised SBB\'s Swiss Mobility APIs and a SAP Hybris Billing back-office covering accounting, billing, invoicing, and payment reconciliation.',
-      'Initiated and designed SBB\'s voice bot using Google Dialogflow and WeChat/AliPay apps for the Asian market.',
+      "Initiated and conceptualised SBB's Swiss Mobility APIs and a SAP Hybris Billing back-office covering accounting, billing, invoicing, and payment reconciliation.",
+      "Initiated and designed SBB's voice bot using Google Dialogflow and WeChat/AliPay apps for the Asian market.",
     ],
   },
   {
@@ -58,7 +58,7 @@ const experience = [
     location: 'Bern, Switzerland',
     period: 'Apr 2013 – Dec 2018',
     bullets: [
-      'Led architecture for SBB\'s omni-channel distribution renewal — 110+ FTEs across 12 distributed teams using a microservice approach on OpenShift.',
+      "Led architecture for SBB's omni-channel distribution renewal — 110+ FTEs across 12 distributed teams using a microservice approach on OpenShift.",
       'Mapped business capabilities to application, data, and infrastructure architecture using a TOGAF-driven approach.',
       'Organisational lead of 4 software architects and 5 developers; successful delivery.',
     ],
@@ -67,7 +67,14 @@ const experience = [
 
 const skills = {
   Languages: ['TypeScript', 'JavaScript', 'Java', 'Python', 'C/C++'],
-  Architecture: ['Microservices', 'Event-Driven', 'SOA', 'GraphQL', 'REST', 'CQRS'],
+  Architecture: [
+    'Microservices',
+    'Event-Driven',
+    'SOA',
+    'GraphQL',
+    'REST',
+    'CQRS',
+  ],
   Frontend: ['React', 'Next.js', 'Web Components', 'Astro', 'CSS'],
   Infrastructure: ['AWS', 'Docker', 'Kubernetes', 'OpenShift', 'Terraform'],
   'AI / ML': ['LLM Agents', 'MCP', 'AWS Bedrock', 'Google Dialogflow', 'RAG'],
@@ -77,93 +84,121 @@ const skills = {
 const projects = [
   {
     name: 'OSDM — Open Rail API Standard',
-    description: 'International open-source API standard for rail ticket distribution, now adopted by all major European railways and global distribution systems.',
+    description:
+      'International open-source API standard for rail ticket distribution, now adopted by all major European railways and global distribution systems.',
     tech: ['OpenAPI', 'REST', 'Railway Standards', 'Open Source'],
     href: 'https://github.com/UnionInternationalCheminsdeFer/OSDM',
   },
   {
     name: 'SBB MCP Agent Ecosystem',
-    description: 'Ecosystem of 10+ domain-expert AI agents (trip planning, booking, weather, events) coordinated via MCP protocols with 1,000+ tool dependencies.',
+    description:
+      'Ecosystem of 10+ domain-expert AI agents (trip planning, booking, weather, events) coordinated via MCP protocols with 1,000+ tool dependencies.',
     tech: ['MCP', 'TypeScript', 'AWS Bedrock', 'LLM Agents'],
     href: 'https://github.com/schlpbch',
   },
   {
     name: 'khtml / WebKit Contributions',
-    description: 'Open-source contributions to the KDE HTML rendering engine (khtml), including substantial work on the CSS parser — now the foundation of WebKit used by Google Chrome and Safari.',
+    description:
+      'Open-source contributions to the KDE HTML rendering engine (khtml), including substantial work on the CSS parser — now the foundation of WebKit used by Google Chrome and Safari.',
     tech: ['C++', 'CSS Parser', 'KDE', 'Open Source'],
     href: 'https://github.com/schlpbch',
   },
   {
     name: 'SBB.ch Headless Rebuild',
-    description: 'Next-generation headless web presence for one of Switzerland\'s three most visited sites, with cloud-edge infrastructure and an enterprise GraphQL layer.',
+    description:
+      "Next-generation headless web presence for one of Switzerland's three most visited sites, with cloud-edge infrastructure and an enterprise GraphQL layer.",
     tech: ['Next.js', 'React', 'GraphQL', 'AWS CloudFront'],
     href: 'https://www.sbb.ch',
   },
 ];
 ---
 
-<BaseLayout title="Work — asc.engineering" description="Experience, skills, and projects spanning AI/ML, enterprise architecture, and distributed systems at scale.">
-  <!-- Resume CTA -->
-  <section class="py-12 bg-accent-50 dark:bg-accent-950/20 border-b border-slate-100 dark:border-slate-800">
-    <Container maxWidth="4xl" size="sm">
-      <div class="flex items-center justify-between flex-col sm:flex-row gap-4">
-        <div>
-          <h3 class="font-semibold text-slate-900 dark:text-white mb-1">Resume / CV</h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400">Download my full resume in PDF format</p>
-        </div>
-        <a href="/resume.pdf" download class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent-700 dark:bg-accent-600 text-white hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors text-sm font-medium shrink-0">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
-          Download
-        </a>
-      </div>
-    </Container>
-  </section>
-
+<BaseLayout
+  title="Work — asc.engineering"
+  description="Experience, skills, and projects spanning AI/ML, enterprise architecture, and distributed systems at scale."
+>
   <!-- Experience -->
-  <section id="experience" class="py-16 border-b border-slate-100 dark:border-slate-800">
+  <section
+    id="experience"
+    class="py-16 border-b border-slate-100 dark:border-slate-800"
+  >
     <Container maxWidth="4xl" size="sm">
-      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">Experience</h2>
+      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">
+        Experience
+      </h2>
       <Stack direction="vertical" size="md">
-        {experience.map((role) => (
-          <Card variant="default" size="md">
-            <Stack direction="horizontal" align="start" justify="between" className="flex-col sm:flex-row mb-3">
-              <div>
-                <h3 class="font-semibold text-slate-900 dark:text-white">{role.title}</h3>
-                <p class="text-sm text-accent-700 dark:text-accent-400">{role.company} · {role.location}</p>
-              </div>
-              <Badge intent="secondary" variant="outline" size="sm" shape="pill">{role.period}</Badge>
-            </Stack>
-            <Stack direction="vertical" size="xs">
-              {role.bullets.map((b) => (
-                <p class="text-sm text-slate-600 dark:text-slate-400 flex gap-2">
-                  <span class="text-accent-500 mt-0.5 shrink-0">›</span>
-                  {b}
-                </p>
-              ))}
-            </Stack>
-          </Card>
-        ))}
+        {
+          experience.map((role) => (
+            <Card variant="default" size="md">
+              <Stack
+                direction="horizontal"
+                align="start"
+                justify="between"
+                className="flex-col sm:flex-row mb-3"
+              >
+                <div>
+                  <h3 class="font-semibold text-slate-900 dark:text-white">
+                    {role.title}
+                  </h3>
+                  <p class="text-sm text-accent-700 dark:text-accent-400">
+                    {role.company} · {role.location}
+                  </p>
+                </div>
+                <Badge
+                  intent="secondary"
+                  variant="outline"
+                  size="sm"
+                  shape="pill"
+                >
+                  {role.period}
+                </Badge>
+              </Stack>
+              <Stack direction="vertical" size="xs">
+                {role.bullets.map((b) => (
+                  <p class="text-sm text-slate-600 dark:text-slate-400 flex gap-2">
+                    <span class="text-accent-500 mt-0.5 shrink-0">›</span>
+                    {b}
+                  </p>
+                ))}
+              </Stack>
+            </Card>
+          ))
+        }
       </Stack>
     </Container>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="py-16 border-b border-slate-100 dark:border-slate-800">
+  <section
+    id="skills"
+    class="py-16 border-b border-slate-100 dark:border-slate-800"
+  >
     <Container maxWidth="4xl" size="sm">
-      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">Skills</h2>
+      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">
+        Skills
+      </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {Object.entries(skills).map(([category, items]) => (
-          <Card variant="filled" size="sm">
-            <p class="text-xs font-semibold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-3">{category}</p>
-            <Stack direction="horizontal" size="xs" wrap>
-              {items.map((skill) => (
-                <Badge intent="primary" variant="default" size="sm" shape="pill">{skill}</Badge>
-              ))}
-            </Stack>
-          </Card>
-        ))}
+        {
+          Object.entries(skills).map(([category, items]) => (
+            <Card variant="filled" size="sm">
+              <p class="text-xs font-semibold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-3">
+                {category}
+              </p>
+              <Stack direction="horizontal" size="xs" wrap>
+                {items.map((skill) => (
+                  <Badge
+                    intent="primary"
+                    variant="default"
+                    size="sm"
+                    shape="pill"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </Stack>
+            </Card>
+          ))
+        }
       </div>
     </Container>
   </section>
@@ -171,27 +206,43 @@ const projects = [
   <!-- Projects -->
   <section id="projects" class="py-16">
     <Container maxWidth="4xl" size="sm">
-      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">Projects</h2>
+      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">
+        Projects
+      </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {projects.map((project) => (
-          <a href={project.href} target="_blank" rel="noopener" class="group block no-underline">
-            <Card variant="default" size="md" interactive className="h-full">
-              <Stack direction="vertical" size="sm" className="h-full">
-                <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
-                  {project.name}
-                </h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-1">
-                  {project.description}
-                </p>
-                <Stack direction="horizontal" size="xs" wrap>
-                  {project.tech.map((t) => (
-                    <Badge intent="secondary" variant="outline" size="sm" shape="rounded">{t}</Badge>
-                  ))}
+        {
+          projects.map((project) => (
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noopener"
+              class="group block no-underline"
+            >
+              <Card variant="default" size="md" interactive className="h-full">
+                <Stack direction="vertical" size="sm" className="h-full">
+                  <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
+                    {project.name}
+                  </h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-1">
+                    {project.description}
+                  </p>
+                  <Stack direction="horizontal" size="xs" wrap>
+                    {project.tech.map((t) => (
+                      <Badge
+                        intent="secondary"
+                        variant="outline"
+                        size="sm"
+                        shape="rounded"
+                      >
+                        {t}
+                      </Badge>
+                    ))}
+                  </Stack>
                 </Stack>
-              </Stack>
-            </Card>
-          </a>
-        ))}
+              </Card>
+            </a>
+          ))
+        }
       </div>
     </Container>
   </section>
