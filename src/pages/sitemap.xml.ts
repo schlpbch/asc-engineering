@@ -17,7 +17,7 @@ const routes = [
 
 export const GET: APIRoute = async () => {
   const posts = await getCollection('blog');
-  const blogRoutes = posts.map((post) => `/blog/${post.slug}`);
+  const blogRoutes = posts.map((post) => `/blog/${post.id}`);
 
   const allRoutes = [...routes, ...blogRoutes];
   const baseUrl = 'https://asc.engineering';

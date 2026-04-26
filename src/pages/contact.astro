@@ -5,9 +5,7 @@ import Card from '@mcp-orchestrator/design-system/components/Card.astro';
 import Input from '@mcp-orchestrator/design-system/components/Input.astro';
 import Textarea from '@mcp-orchestrator/design-system/components/Textarea.astro';
 import Button from '@mcp-orchestrator/design-system/components/Button.astro';
-import FormField from '@mcp-orchestrator/design-system/components/FormField.astro';
 import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
-import Alert from '@mcp-orchestrator/design-system/components/Alert.astro';
 ---
 
 <BaseLayout
@@ -39,41 +37,57 @@ import Alert from '@mcp-orchestrator/design-system/components/Alert.astro';
               <input name="bot-field" />
             </div>
 
-            <FormField label="Name" required>
+            <div class="space-y-2">
+              <label for="name" class="block text-sm font-medium text-slate-900 dark:text-white">
+                Name <span class="text-red-500">*</span>
+              </label>
               <Input
+                id="name"
                 type="text"
                 name="name"
                 placeholder="Your name"
                 required
               />
-            </FormField>
+            </div>
 
-            <FormField label="Email" required>
+            <div class="space-y-2">
+              <label for="email" class="block text-sm font-medium text-slate-900 dark:text-white">
+                Email <span class="text-red-500">*</span>
+              </label>
               <Input
+                id="email"
                 type="email"
                 name="email"
                 placeholder="your@email.com"
                 required
               />
-            </FormField>
+            </div>
 
-            <FormField label="Subject" required>
+            <div class="space-y-2">
+              <label for="subject" class="block text-sm font-medium text-slate-900 dark:text-white">
+                Subject <span class="text-red-500">*</span>
+              </label>
               <Input
+                id="subject"
                 type="text"
                 name="subject"
                 placeholder="What is this about?"
                 required
               />
-            </FormField>
+            </div>
 
-            <FormField label="Message" required>
+            <div class="space-y-2">
+              <label for="message" class="block text-sm font-medium text-slate-900 dark:text-white">
+                Message <span class="text-red-500">*</span>
+              </label>
               <Textarea
+                id="message"
                 name="message"
                 placeholder="Your message..."
                 rows={6}
                 required
               />
-            </FormField>
+            </div>
 
             <Button type="submit" intent="primary" fullWidth>
               Send Message
@@ -108,7 +122,9 @@ import Alert from '@mcp-orchestrator/design-system/components/Alert.astro';
 
     if (form && statusDiv) {
       form.addEventListener('submit', async (e) => {
+        e.preventDefault();
         const formData = new FormData(form);
+
         try {
           const response = await fetch('/', {
             method: 'POST',
@@ -125,13 +141,21 @@ import Alert from '@mcp-orchestrator/design-system/components/Alert.astro';
             div.appendChild(p);
             statusDiv.appendChild(div);
             form.reset();
+          } else {
+            const div = document.createElement('div');
+            div.className = 'mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg';
+            const p = document.createElement('p');
+            p.className = 'text-sm text-red-800 dark:text-red-300 font-medium';
+            p.textContent = 'Something went wrong. Please try again or email directly.';
+            div.appendChild(p);
+            statusDiv.appendChild(div);
           }
         } catch (error) {
           const div = document.createElement('div');
           div.className = 'mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg';
           const p = document.createElement('p');
           p.className = 'text-sm text-red-800 dark:text-red-300 font-medium';
-          p.textContent = 'Something went wrong. Please try again or email directly.';
+          p.textContent = 'Network error. Please check your connection and try again.';
           div.appendChild(p);
           statusDiv.appendChild(div);
         }

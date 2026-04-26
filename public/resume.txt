@@ -1,0 +1,10 @@
+Resume placeholder
+
+This is a placeholder file. Replace with your actual resume.pdf.
+
+Dr. Andreas Schlapbach
+AI/ML Initiative Lead & Enterprise Architect
+
+Contact: schlpbch@gmail.com
+LinkedIn: /in/andreas-schlapbach
+GitHub: /schlpbch

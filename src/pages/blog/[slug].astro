@@ -4,22 +4,22 @@ import Container from '@mcp-orchestrator/design-system/components/Container.astr
 import Breadcrumb from '@mcp-orchestrator/design-system/components/Breadcrumb.astro';
 import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
 import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 }
 
 interface Props {
-  post: any;
+  post: CollectionEntry<'blog'>;
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 const formattedDate = post.data.date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
