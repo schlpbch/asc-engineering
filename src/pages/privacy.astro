@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+---
+
+<BaseLayout title="Privacy Statement — asc.engineering" description="Privacy statement and data protection information for asc.engineering.">
+  <section id="privacy" class="py-16">
+    <Container maxWidth="4xl" size="sm">
+      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">Privacy Statement</h2>
+      <Card variant="default" size="md">
+        <div class="prose prose-invert max-w-none">
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">Data Protection</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            I take the protection of your personal data very seriously. I treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy statement.
+          </p>
+
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">Collection of Data</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            This website generally does not collect personal data automatically. However, when you contact me via email or other communication channels, I will collect the data you provide (such as your name, email address, and message content) solely for the purpose of responding to your inquiry.
+          </p>
+
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">Server Logs</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            When you visit this website, the server automatically records information such as your IP address, browser type, and the pages you visit in log files. These logs are used for technical administration, security, and statistics purposes. They are typically deleted after a reasonable retention period.
+          </p>
+
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">Cookies</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            This website uses a local storage mechanism to persist your dark mode preference. No tracking cookies or third-party cookies are used. The theme preference is stored locally on your device and is not transmitted to any server.
+          </p>
+
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">External Links</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            This website contains links to external websites. I am not responsible for the privacy practices of these external sites. Please review their privacy statements before providing any personal information.
+          </p>
+
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">Your Rights</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            You have the right to request access, correction, deletion, or restriction of your personal data. If you have any questions about my data processing practices or wish to exercise your rights, please contact me at <a href="mailto:schlpbch@gmail.com" class="text-accent-700 dark:text-accent-400 hover:text-accent-600">schlpbch@gmail.com</a>.
+          </p>
+
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">Changes to this Statement</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            I may update this privacy statement from time to time to reflect changes in my practices or for other operational, legal, or regulatory reasons. The most recent version is always available on this website.
+          </p>
+        </div>
+      </Card>
+    </Container>
+  </section>
+</BaseLayout>

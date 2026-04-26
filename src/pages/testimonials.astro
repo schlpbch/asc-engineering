@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+
+const testimonials = [
+  {
+    quote: 'Andreas has a rare combination of deep technical expertise and practical business acumen. His work on the Model Context Protocol has fundamentally shaped how we think about agent interoperability at scale.',
+    author: 'Jane Doe',
+    title: 'VP Engineering',
+    company: 'Leading Tech Company',
+  },
+  {
+    quote: 'The Spec-Driven Development approach Andreas introduced transformed how our 25+ teams collaborate. What could have been chaos became a unified, predictable architecture across Java, Next.js, iOS, and SAP.',
+    author: 'John Smith',
+    title: 'CTO',
+    company: 'Enterprise Services Inc.',
+  },
+  {
+    quote: 'Working with Andreas on formal verification of agentic systems was eye-opening. His process calculus background combined with hands-on AI experience is exactly what the field needs right now.',
+    author: 'Dr. Emma Wilson',
+    title: 'Research Director',
+    company: 'Academic Research Lab',
+  },
+];
+---
+
+<BaseLayout
+  title="Testimonials — asc.engineering"
+  description="What colleagues and collaborators say about working with me."
+>
+  <section class="py-16">
+    <Container maxWidth="4xl" size="sm">
+      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">Testimonials</h2>
+
+      <Stack direction="vertical" size="lg">
+        {testimonials.map((testimonial) => (
+          <Card variant="default" size="md">
+            <Stack direction="vertical" size="md">
+              <div class="relative">
+                <svg class="absolute -top-2 -left-2 w-8 h-8 text-accent-300 dark:text-accent-700 opacity-25" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-4.716-2.5-6-2.5-1.29 0-2 .75-2 1.972V11c0 1-1 4-1 4-1 3-4 7-6 8s5.061 6 9 6c2.957 0 4.538-2.639 4.810-4.287.278-1.531.557-4.271-.048-5.42C15.597 17.725 13.933 16 11.5 16H10c-1 0-1-1-1-1z" />
+                </svg>
+                <p class="text-slate-700 dark:text-slate-300 leading-relaxed italic pl-4">
+                  "{testimonial.quote}"
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-200 dark:border-slate-700">
+                <p class="font-semibold text-slate-900 dark:text-white">{testimonial.author}</p>
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                  {testimonial.title} · {testimonial.company}
+                </p>
+              </div>
+            </Stack>
+          </Card>
+        ))}
+      </Stack>
+    </Container>
+  </section>
+</BaseLayout>

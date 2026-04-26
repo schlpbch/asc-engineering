@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Button from '@mcp-orchestrator/design-system/components/Button.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+---
+
+<BaseLayout
+  title="Page Not Found — asc.engineering"
+  description="This page doesn't exist, but you might find what you're looking for below."
+>
+  <section class="py-20">
+    <Container maxWidth="4xl" size="sm">
+      <div class="text-center mb-12">
+        <h1 class="text-6xl font-bold text-slate-900 dark:text-white mb-4">404</h1>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white mb-3">Page Not Found</h2>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed max-w-md mx-auto">
+          The page you're looking for doesn't exist. It might have been moved, renamed, or perhaps it never existed at all.
+        </p>
+      </div>
+
+      <Stack direction="vertical" size="lg">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Card variant="outlined" size="md">
+            <div class="text-center">
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-3">Start Here</h3>
+              <a href="/" class="inline-block">
+                <Button intent="primary" variant="ghost">
+                  Go to Home
+                </Button>
+              </a>
+            </div>
+          </Card>
+
+          <Card variant="outlined" size="md">
+            <div class="text-center">
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-3">Explore</h3>
+              <Stack direction="vertical" size="xs">
+                <a href="/about" class="text-sm text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300">About</a>
+                <a href="/work" class="text-sm text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300">Work</a>
+                <a href="/academia" class="text-sm text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300">Academia</a>
+                <a href="/blog" class="text-sm text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300">Blog</a>
+              </Stack>
+            </div>
+          </Card>
+
+          <Card variant="outlined" size="md">
+            <div class="text-center">
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-3">Connect</h3>
+              <Stack direction="vertical" size="xs">
+                <a href="/speaking" class="text-sm text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300">Speaking</a>
+                <a href="/contact" class="text-sm text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300">Contact</a>
+                <a href="https://linkedin.com/in/andreas-schlapbach" target="_blank" class="text-sm text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300">LinkedIn</a>
+              </Stack>
+            </div>
+          </Card>
+
+          <Card variant="outlined" size="md">
+            <div class="text-center">
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-3">More</h3>
+              <Stack direction="vertical" size="xs">
+                <a href="/testimonials" class="text-sm text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300">Testimonials</a>
+                <a href="/impressum" class="text-sm text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300">Impressum</a>
+                <a href="/privacy" class="text-sm text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300">Privacy</a>
+              </Stack>
+            </div>
+          </Card>
+        </div>
+      </Stack>
+    </Container>
+  </section>
+</BaseLayout>

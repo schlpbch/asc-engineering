@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Input from '@mcp-orchestrator/design-system/components/Input.astro';
+import Textarea from '@mcp-orchestrator/design-system/components/Textarea.astro';
+import Button from '@mcp-orchestrator/design-system/components/Button.astro';
+import FormField from '@mcp-orchestrator/design-system/components/FormField.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import Alert from '@mcp-orchestrator/design-system/components/Alert.astro';
+---
+
+<BaseLayout
+  title="Contact — asc.engineering"
+  description="Get in touch. I'm interested in conversations about AI, distributed systems, and architecture."
+>
+  <section class="py-16">
+    <Container maxWidth="4xl" size="sm">
+      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">Get in Touch</h2>
+
+      <Stack direction="vertical" size="lg">
+        <Card variant="default" size="md">
+          <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+            I'm interested in conversations about AI systems, distributed architecture, spec-driven development, and the future of agentic ecosystems. Feel free to reach out with questions, collaboration ideas, or speaking opportunities.
+          </p>
+
+          <div id="form-status"></div>
+
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="space-y-4"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+
+            <div class="hidden">
+              <input name="bot-field" />
+            </div>
+
+            <FormField label="Name" required>
+              <Input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </FormField>
+
+            <FormField label="Email" required>
+              <Input
+                type="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+              />
+            </FormField>
+
+            <FormField label="Subject" required>
+              <Input
+                type="text"
+                name="subject"
+                placeholder="What is this about?"
+                required
+              />
+            </FormField>
+
+            <FormField label="Message" required>
+              <Textarea
+                name="message"
+                placeholder="Your message..."
+                rows={6}
+                required
+              />
+            </FormField>
+
+            <Button type="submit" intent="primary" fullWidth>
+              Send Message
+            </Button>
+          </form>
+        </Card>
+
+        <Card variant="default" size="md">
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-4">Direct Contact</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+            Or reach out directly via email or social media:
+          </p>
+          <Stack direction="vertical" size="xs">
+            <a href="mailto:schlpbch@gmail.com" class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-sm transition-colors">
+              schlpbch@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/andreas-schlapbach" target="_blank" rel="noopener" class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-sm transition-colors">
+              LinkedIn: /in/andreas-schlapbach
+            </a>
+            <a href="https://github.com/schlpbch" target="_blank" rel="noopener" class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-sm transition-colors">
+              GitHub: /schlpbch
+            </a>
+          </Stack>
+        </Card>
+      </Stack>
+    </Container>
+  </section>
+
+  <script>
+    const form = document.querySelector('form');
+    const statusDiv = document.getElementById('form-status');
+
+    if (form && statusDiv) {
+      form.addEventListener('submit', async (e) => {
+        const formData = new FormData(form);
+        try {
+          const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData as any).toString(),
+          });
+
+          if (response.ok) {
+            const div = document.createElement('div');
+            div.className = 'mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg';
+            const p = document.createElement('p');
+            p.className = 'text-sm text-green-800 dark:text-green-300 font-medium';
+            p.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
+            div.appendChild(p);
+            statusDiv.appendChild(div);
+            form.reset();
+          }
+        } catch (error) {
+          const div = document.createElement('div');
+          div.className = 'mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg';
+          const p = document.createElement('p');
+          p.className = 'text-sm text-red-800 dark:text-red-300 font-medium';
+          p.textContent = 'Something went wrong. Please try again or email directly.';
+          div.appendChild(p);
+          statusDiv.appendChild(div);
+        }
+      });
+    }
+  </script>
+</BaseLayout>

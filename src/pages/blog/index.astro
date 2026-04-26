@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout title="Blog — asc.engineering" description="Articles on AI, LLM agents, architecture, and distributed systems.">
+  <section id="blog" class="py-16">
+    <Container maxWidth="4xl" size="sm">
+      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">Latest Articles</h2>
+      <Stack direction="vertical" size="md">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="group block no-underline">
+            <Card variant="default" size="md" interactive className="h-full">
+              <Stack direction="vertical" size="sm" className="h-full">
+                <Stack direction="horizontal" align="center" size="sm" justify="between" className="flex-col sm:flex-row">
+                  <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors flex-1">
+                    {post.data.title}
+                  </h3>
+                  <span class="text-xs text-slate-500 dark:text-slate-500 shrink-0 mt-2 sm:mt-0">
+                    {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  </span>
+                </Stack>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-1">
+                  {post.data.description}
+                </p>
+                {post.data.tags.length > 0 && (
+                  <Stack direction="horizontal" size="xs" wrap>
+                    {post.data.tags.map((tag) => (
+                      <Badge intent="secondary" variant="outline" size="sm" shape="rounded">{tag}</Badge>
+                    ))}
+                  </Stack>
+                )}
+              </Stack>
+            </Card>
+          </a>
+        ))}
+      </Stack>
+    </Container>
+  </section>
+</BaseLayout>

@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+
+type Pub = { text: string; href?: string };
+
+const publications: {
+  theses: Pub[];
+  inReview: Pub[];
+  booksAndJournals: Pub[];
+  conferencesPapers: Pub[];
+} = {
+  theses: [
+    { text: 'A. Schlapbach: Enabling White-Box Reuse in a Pure Composition Language. Diplomarbeit, University of Bern, 2002.', href: '/papers/master-thesis-2002.pdf' },
+    { text: 'A. Schlapbach: Generic XMI Support for the MOOSE Reengineering Environment. Bachelor thesis, University of Bern, 2001.', href: '/papers/bachelor-thesis-2001.pdf' },
+  ],
+  inReview: [
+    { text: 'A. Schlapbach: The Convergence of Schema-Guided Dialogue Systems and the Model Context Protocol.', href: 'https://arxiv.org/abs/2602.18764' },
+    { text: 'A. Schlapbach: Formal Semantics for Agentic Tool Protocols: A Process Calculus Approach.', href: 'https://arxiv.org/abs/2603.24747' },
+    { text: 'A. Schlapbach: Collinearity and Cluster Stability in Transport Economics, Evidence from Aviation and Rail.' },
+  ],
+  booksAndJournals: [
+    { text: 'A. Schlapbach: Writer Identification and Writer Verification. Dissertationen zur Künstlichen Intelligenz, Aka, Berlin. ISBN: 0817646701.' },
+    { text: 'M. Liwicki, A. Schlapbach, and H. Bunke: Automatic Gender Detection — Combining On-line and Off-line Systems. International Journal of Pattern Recognition and Artificial Intelligence, World Scientific, 2008.', href: '/papers/gender-detection-ijprai-2008.pdf' },
+    { text: 'A. Schlapbach and H. Bunke: A Writer Identification System for On-line Whiteboard Data. Journal of Pattern Recognition, vol. 41(7), pp. 2381–2397, Elsevier, 2008.', href: '/papers/online-wi-pattern-recognition-2008.pdf' },
+    { text: 'A. Schlapbach and H. Bunke: Off-line Writer Identification and Verification Using Gaussian Mixture Models. In Machine Learning in Document Analysis and Recognition, vol. 11, pp. 409–428, Springer, 2008.', href: '/papers/offline-wi-gmm-springer-2008.pdf' },
+    { text: 'A. Schlapbach and H. Bunke: A Writer Identification and Verification System Using HMM Based Recognizers. Pattern Analysis & Applications, vol. 10(1), pp. 33–43, Springer, 2007.', href: '/papers/wi-hmm-paa-2007.pdf' },
+  ],
+  conferencesPapers: [
+    { text: 'M. Liwicki, A. Schlapbach, and H. Bunke: Using On-line and Off-line Data to Detect Gender and Handedness from Handwriting. Pattern Analysis and Applications, 14(1), pp. 87–92, 2011.' },
+    { text: 'M. Liwicki, A. Schlapbach, and H. Bunke: Writer-Dependent Recognition of Handwritten Whiteboard Notes in Smart Meeting Room Environments. Proc. 8th IAPR Workshop on Document Analysis Systems, pp. 151–157, 2008.' },
+    { text: 'A. Schlapbach, F. Wettstein, and H. Bunke: Automatic Estimation of the Readability of Handwritten Text. Proc. 16th European Signal Processing Conference, pp. 1–5, 2008.', href: '/papers/readability-eusipco-2008.pdf' },
+    { text: 'A. Schlapbach, F. Wettstein, and H. Bunke: Estimating the Readability of Handwritten Text — A Support Vector Regression Based Approach. Nominated for best paper award. Proc. 19th Int. Conf. on Pattern Recognition, pp. 1–4, 2008.', href: '/papers/readability-svr-icpr-2008.pdf' },
+    { text: 'M. Liwicki, A. Schlapbach, P. Loretan, and H. Bunke: Automatic Detection of Gender and Handedness from On-Line Handwriting. Proc. 13th Conf. Int. Graphonomics Society, pp. 179–183, 2007.' },
+    { text: 'A. Schlapbach and H. Bunke: Fusing Asynchronous Feature Streams for On-line Writer Identification. Proc. 9th Int. Conf. on Document Analysis and Recognition, pp. 103–107, 2007.' },
+    { text: 'A. Schlapbach and H. Bunke: Off-line Writer Verification: A Comparison of an HMM and a GMM Based System. Proc. 10th Int. Workshop on Frontiers in Handwriting Recognition, pp. 275–280, 2006.', href: '/papers/offline-wi-verification-iwfhr-2006.pdf' },
+    { text: 'A. Schlapbach and H. Bunke: Off-line Writer Identification Using Gaussian Mixture Models. Proc. 18th Int. Conf. on Pattern Recognition, pp. 992–995, 2006.', href: '/papers/offline-wi-gmm-icpr-2006.pdf' },
+    { text: 'M. Liwicki, A. Schlapbach, H. Bunke, et al.: Writer Identification for Smart Meeting Room Systems. Proc. 7th IAPR Workshop on Document Analysis Systems, pp. 186–195, 2006.', href: '/papers/wi-smart-meeting-das-2006.pdf' },
+    { text: 'A. Schlapbach, V. Kilchherr, and H. Bunke: Improving Writer Identification by Means of Feature Selection and Extraction. Proc. 8th Int. Conf. on Document Analysis and Recognition, pp. 131–135, 2005.', href: '/papers/improving-wi-icdar-2005.pdf' },
+    { text: 'A. Schlapbach and H. Bunke: Writer Identification Using an HMM-Based Handwriting Recognition System. Proc. 12th Conf. Int. Graphonomics Society, pp. 138–142, 2005.', href: '/papers/wi-hmm-graphonomics-2005.pdf' },
+    { text: 'A. Schlapbach and H. Bunke: Off-line Handwriting Identification Using HMM Based Recognizers. Proc. 17th Int. Conf. on Pattern Recognition, pp. 654–658, 2004.', href: '/papers/offline-hi-hmm-icpr-2004.pdf' },
+    { text: 'A. Schlapbach and H. Bunke: Using HMM Based Recognizers for Writer Identification and Verification. Proc. 9th Int. Workshop on Frontiers in Handwriting Recognition, pp. 167–172, 2004.', href: '/papers/wi-hmm-recognizers-iwfhr-2004.pdf' },
+  ],
+};
+---
+
+<BaseLayout title="Academia — asc.engineering" description="Academic publications spanning software composition, handwriting recognition, machine learning, and LLM agentic systems.">
+  <!-- Publications -->
+  <section id="publications" class="py-16 border-b border-slate-100 dark:border-slate-800">
+    <Container maxWidth="4xl" size="sm">
+      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">Publications</h2>
+      <Stack direction="vertical" size="md">
+
+        <!-- Theses -->
+        <Card variant="default" size="md">
+          <Stack direction="horizontal" align="center" size="sm" className="mb-4">
+            <h3 class="font-semibold text-slate-900 dark:text-white">Theses</h3>
+            <Badge intent="secondary" variant="default" size="sm" shape="pill">{publications.theses.length} theses</Badge>
+          </Stack>
+          <Stack direction="vertical" size="sm">
+            {publications.theses.map((p) => (
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex gap-2">
+                <span class="text-accent-700 dark:text-accent-400 mt-0.5 shrink-0">›</span>
+                <span>
+                  {p.text}
+                  {p.href && (
+                    <a href={p.href} target="_blank" rel="noopener" class="ml-1.5 inline-flex items-center gap-0.5 text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-xs font-medium transition-colors" aria-label="Open PDF">
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 17v-1h8v1H8zm0-3v-1h8v1H8zm0-3V10h4v1H8z"/></svg>
+                      PDF
+                    </a>
+                  )}
+                </span>
+              </p>
+            ))}
+          </Stack>
+        </Card>
+
+        <!-- In Review -->
+        <Card variant="default" size="md">
+          <Stack direction="horizontal" align="center" size="sm" className="mb-4">
+            <h3 class="font-semibold text-slate-900 dark:text-white">In Review</h3>
+            <Badge intent="warning" variant="default" size="sm" shape="pill">Under Review</Badge>
+          </Stack>
+          <Stack direction="vertical" size="sm">
+            {publications.inReview.map((p) => (
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex gap-2">
+                <span class="text-accent-700 dark:text-accent-400 mt-0.5 shrink-0">›</span>
+                <span>
+                  {p.text}
+                  {p.href && (
+                    <a href={p.href} target="_blank" rel="noopener" class="ml-1.5 inline-flex items-center gap-0.5 text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-xs font-medium transition-colors" aria-label="Open preprint">
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 17v-1h8v1H8zm0-3v-1h8v1H8zm0-3V10h4v1H8z"/></svg>
+                      arXiv
+                    </a>
+                  )}
+                </span>
+              </p>
+            ))}
+          </Stack>
+        </Card>
+
+        <!-- Books & Journals -->
+        <Card variant="default" size="md">
+          <Stack direction="horizontal" align="center" size="sm" className="mb-4">
+            <h3 class="font-semibold text-slate-900 dark:text-white">Books, Chapters &amp; Journals</h3>
+            <Badge intent="success" variant="default" size="sm" shape="pill">5 publications</Badge>
+          </Stack>
+          <Stack direction="vertical" size="sm">
+            {publications.booksAndJournals.map((p) => (
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex gap-2">
+                <span class="text-accent-700 dark:text-accent-400 mt-0.5 shrink-0">›</span>
+                <span>
+                  {p.text}
+                  {p.href && (
+                    <a href={p.href} target="_blank" rel="noopener" class="ml-1.5 inline-flex items-center gap-0.5 text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-xs font-medium transition-colors" aria-label="Open PDF">
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 17v-1h8v1H8zm0-3v-1h8v1H8zm0-3V10h4v1H8z"/></svg>
+                      PDF
+                    </a>
+                  )}
+                </span>
+              </p>
+            ))}
+          </Stack>
+        </Card>
+
+        <!-- Conference Papers -->
+        <Card variant="default" size="md">
+          <Stack direction="horizontal" align="center" size="sm" className="mb-4">
+            <h3 class="font-semibold text-slate-900 dark:text-white">Conference Papers</h3>
+            <Badge intent="info" variant="default" size="sm" shape="pill">{publications.conferencesPapers.length} papers</Badge>
+          </Stack>
+          <Stack direction="vertical" size="sm">
+            {publications.conferencesPapers.map((p) => (
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex gap-2">
+                <span class="text-accent-700 dark:text-accent-400 mt-0.5 shrink-0">›</span>
+                <span>
+                  {p.text}
+                  {p.href && (
+                    <a href={p.href} target="_blank" rel="noopener" class="ml-1.5 inline-flex items-center gap-0.5 text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 text-xs font-medium transition-colors" aria-label="Open PDF">
+                      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 17v-1h8v1H8zm0-3v-1h8v1H8zm0-3V10h4v1H8z"/></svg>
+                      PDF
+                    </a>
+                  )}
+                </span>
+              </p>
+            ))}
+          </Stack>
+        </Card>
+
+      </Stack>
+    </Container>
+  </section>
+</BaseLayout>

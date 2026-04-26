@@ -1,0 +1,135 @@
+---
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Header from '@mcp-orchestrator/design-system/components/Header.astro';
+import Footer from '@mcp-orchestrator/design-system/components/Footer.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import IconButton from '@mcp-orchestrator/design-system/components/IconButton.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: string;
+}
+
+const {
+  title = 'asc.engineering',
+  description = 'Dr. Andreas Schlapbach — AI/ML Initiative Lead & Enterprise Architect at SBB. Designing agentic ecosystems, LLM systems, and international open standards.',
+  ogImage = '/og-default.png',
+  ogType = 'website'
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta property="og:url" content={canonicalUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+
+    <title>{title}</title>
+
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+
+  <body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-200 min-h-screen">
+
+    <Header sticky maxWidth="4xl">
+      <Fragment slot="logo">
+        <a href="/" class="text-accent-700 dark:text-accent-400 tracking-tight hover:text-accent-600 dark:hover:text-accent-300 transition-colors">AS</a>
+      </Fragment>
+
+      <Fragment slot="nav">
+        <a href="/" class="px-3 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Home</a>
+        <a href="/about" class="px-3 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">About</a>
+        <a href="/work" class="px-3 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Work</a>
+        <a href="/academia" class="px-3 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Academia</a>
+        <a href="/blog" class="px-3 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Blog</a>
+        <a href="/speaking" class="px-3 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Speaking</a>
+        <a href="/contact" class="px-3 py-1.5 rounded-md text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Contact</a>
+      </Fragment>
+
+      <Fragment slot="actions">
+        <IconButton id="theme-toggle" ariaLabel="Toggle dark mode" title="Toggle dark mode">
+          <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </IconButton>
+      </Fragment>
+
+      <Fragment slot="mobile-menu">
+        <Stack direction="vertical" size="xs">
+          <a href="/" class="block px-3 py-2 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Home</a>
+          <a href="/about" class="block px-3 py-2 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">About</a>
+          <a href="/work" class="block px-3 py-2 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Work</a>
+          <a href="/academia" class="block px-3 py-2 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Academia</a>
+          <a href="/blog" class="block px-3 py-2 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Blog</a>
+          <a href="/speaking" class="block px-3 py-2 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Speaking</a>
+          <a href="/contact" class="block px-3 py-2 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">Contact</a>
+        </Stack>
+      </Fragment>
+    </Header>
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer variant="minimal" maxWidth="4xl" copyright={`© ${new Date().getFullYear()} Dr. Andreas Schlapbach`}>
+      <Fragment slot="brand">
+        <span class="text-accent-700 dark:text-accent-400 font-semibold">AS</span>
+        <span class="text-slate-600 dark:text-slate-400">Dr. Andreas Schlapbach</span>
+      </Fragment>
+      <Fragment slot="bottom">
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="https://astro.build" target="_blank" rel="noopener" class="hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Built with Astro</a>
+          <span class="text-slate-400 dark:text-slate-600">·</span>
+          <a href="/hobbies" class="hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Hobbies</a>
+          <span class="text-slate-400 dark:text-slate-600">·</span>
+          <a href="/testimonials" class="hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Testimonials</a>
+          <span class="text-slate-400 dark:text-slate-600">·</span>
+          <a href="/impressum" class="hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Impressum</a>
+          <span class="text-slate-400 dark:text-slate-600">·</span>
+          <a href="/privacy" class="hover:text-accent-600 dark:hover:text-accent-400 transition-colors">Privacy</a>
+        </div>
+      </Fragment>
+    </Footer>
+
+    <script>
+      const btn = document.getElementById('theme-toggle');
+      btn?.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    </script>
+  </body>
+</html>

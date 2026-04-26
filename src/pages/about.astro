@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+---
+
+<BaseLayout
+  title="About — asc.engineering"
+  description="Background, education, and professional journey of Dr. Andreas Schlapbach."
+>
+  <section class="py-16">
+    <Container maxWidth="4xl" size="sm">
+      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">About Me</h2>
+
+      <Stack direction="vertical" size="md">
+        <Card variant="default" size="md">
+          <div class="prose prose-slate dark:prose-invert prose-sm max-w-none
+            prose-headings:font-semibold prose-headings:mt-6 prose-headings:mb-3
+            prose-h3:text-lg
+            prose-p:text-slate-700 dark:prose-p:text-slate-400 prose-p:leading-relaxed
+            prose-strong:text-slate-900 dark:prose-strong:text-white">
+
+            <h3>Background</h3>
+            <p>
+              I'm an AI/ML Initiative Lead and Enterprise Architect based in Muri bei Bern, Switzerland. With over 25 years of experience building large-scale distributed systems, I've worked at the intersection of software architecture, distributed computing, machine learning, and—most recently—agentic AI systems.
+            </p>
+
+            <h3>Career Path</h3>
+            <p>
+              My career has evolved across three distinct chapters:
+            </p>
+            <ul>
+              <li><strong>Software Composition & Reengineering (2001–2003):</strong> Focused on formal methods (π-calculus), meta-modeling (MOF/XMI), and component-oriented programming at the University of Bern.</li>
+              <li><strong>Machine Learning & Document Analysis (2004–2011):</strong> Applied statistical learning (HMM, GMM, SVM) to handwriting recognition and writer identification, contributing to pattern recognition and document image analysis.</li>
+              <li><strong>Enterprise Architecture & AI Systems (2013–Present):</strong> Led architecture for SBB's omni-channel distribution, next-generation web presence (sbb.ch), and—most recently—agentic ecosystems using the Model Context Protocol.</li>
+            </ul>
+
+            <h3>Current Focus</h3>
+            <p>
+              I lead AI/ML initiatives at SBB's Passenger Division, designing ecosystems of domain-expert agents coordinated via the Model Context Protocol (MCP). My recent work explores formal verification of agentic systems, schema-driven interoperability, and scaling LLM-powered tools across large organizations.
+            </p>
+
+            <h3>Education</h3>
+            <ul>
+              <li><strong>PhD in Computer Science</strong> — University of Bern, 2008. Dissertation: "Writer Identification and Verification."</li>
+              <li><strong>Diplom (Master's)</strong> — University of Bern, 2002. Thesis: "Enabling White-Box Reuse in a Pure Composition Language" (JPiccola).</li>
+              <li><strong>Bachelor's</strong> — University of Bern, 2001. Thesis: "Generic XMI Support for the MOOSE Reengineering Environment."</li>
+            </ul>
+
+            <h3>Open Source & Community</h3>
+            <p>
+              I'm a long-standing contributor to open-source projects, including contributions to the KDE HTML rendering engine (khtml) and WebKit CSS parser. I'm also the Technical Lead and Product Owner of the Open Sales and Distribution Model (OSDM), an international API standard for rail ticket distribution, now adopted by all major European railways and leading global distribution systems.
+            </p>
+
+            <h3>Interests</h3>
+            <p>
+              Beyond work, I'm fascinated by the intersection of formal methods and practical systems, the challenges of scaling machine learning in production, and the emerging paradigm of agentic AI. I believe the future of enterprise software lies in intelligent, schema-driven agent ecosystems that can dynamically compose tools across organizational and domain boundaries.
+            </p>
+          </div>
+        </Card>
+      </Stack>
+    </Container>
+  </section>
+</BaseLayout>

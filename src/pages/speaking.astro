@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
+import Button from '@mcp-orchestrator/design-system/components/Button.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+
+const talks = [
+  {
+    title: 'The Convergence of SGD and MCP: A New Paradigm for Agentic Interoperability',
+    event: 'arXiv Preprint',
+    year: 2026,
+    location: 'Online',
+    topics: ['AI Agents', 'MCP', 'LLMs'],
+  },
+  {
+    title: 'Formal Semantics for Agentic Tool Protocols: A Process Calculus Approach',
+    event: 'arXiv Preprint',
+    year: 2026,
+    location: 'Online',
+    topics: ['Formal Methods', 'Agents', 'Protocols'],
+  },
+  {
+    title: 'Spec-Driven Development: Scaling AI Across Enterprise Tech Stacks',
+    event: 'Internal SBB AI/ML Summit',
+    year: 2025,
+    location: 'Bern, Switzerland',
+    topics: ['Architecture', 'AI', 'Scaling'],
+  },
+];
+
+const topics = [
+  'LLM Agentic Ecosystems & the Model Context Protocol',
+  'Spec-Driven Development for Enterprise AI',
+  'Formal Verification of Distributed Systems',
+  'Schema-Driven Architecture & Interoperability',
+  'Scaling Machine Learning in Production',
+  'Open Standards for AI Tool Protocols',
+];
+---
+
+<BaseLayout
+  title="Speaking — asc.engineering"
+  description="Talks and presentations on AI systems, architecture, and formal methods."
+>
+  <section class="py-16">
+    <Container maxWidth="4xl" size="sm">
+      <h2 class="text-xl font-semibold mb-12 text-slate-900 dark:text-white">Speaking</h2>
+
+      <Stack direction="vertical" size="lg">
+        <!-- Topics -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6 text-slate-900 dark:text-white">Topics I Talk About</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {topics.map((topic) => (
+              <Card variant="filled" size="sm">
+                <p class="text-sm text-slate-900 dark:text-white font-medium">{topic}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <!-- Past Talks -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6 text-slate-900 dark:text-white">Recent Talks</h3>
+          <Stack direction="vertical" size="md">
+            {talks.map((talk) => (
+              <Card variant="default" size="md">
+                <Stack direction="vertical" size="sm">
+                  <div>
+                    <h4 class="font-semibold text-slate-900 dark:text-white">{talk.title}</h4>
+                    <p class="text-sm text-accent-700 dark:text-accent-400 mt-1">
+                      {talk.event} · {talk.location} ({talk.year})
+                    </p>
+                  </div>
+                  <Stack direction="horizontal" size="xs" wrap>
+                    {talk.topics.map((topic) => (
+                      <Badge intent="secondary" variant="outline" size="sm" shape="rounded">
+                        {topic}
+                      </Badge>
+                    ))}
+                  </Stack>
+                </Stack>
+              </Card>
+            ))}
+          </Stack>
+        </div>
+
+        <!-- Speaking CTA -->
+        <Card variant="default" size="md">
+          <div class="text-center">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-3">Available for Speaking</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+              I'm interested in speaking opportunities at conferences, workshops, and industry events. Topics include agentic AI systems, formal methods, distributed architecture, and enterprise-scale machine learning.
+            </p>
+            <a href="/contact" class="inline-block">
+              <Button intent="primary">
+                Get in Touch
+              </Button>
+            </a>
+          </div>
+        </Card>
+      </Stack>
+    </Container>
+  </section>
+</BaseLayout>
