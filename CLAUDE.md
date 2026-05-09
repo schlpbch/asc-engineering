@@ -52,8 +52,8 @@ Import components directly by path to avoid Astro version mismatch issues:
 import Card from '@mcp-orchestrator/design-system/components/Card.astro';
 ```
 
-### Google Fonts import order
-The `@import url(...)` for Google Fonts must come **before** `@import "tailwindcss"` in `global.css`, otherwise Tailwind emits a warning and the font may not load correctly.
+### Google Fonts loading strategy
+Google Fonts is loaded as async `<link>` tags in `BaseLayout.astro` (not via CSS `@import`) to avoid render-blocking. The pattern uses `media="print" onload="this.media='all'"` with `<noscript>` fallback, plus `rel="preconnect"` hints for `fonts.googleapis.com` and `fonts.gstatic.com`.
 
 ## Components used from design system
 

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import portraitImg from '../assets/portrait.jpg';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Container from '@mcp-orchestrator/design-system/components/Container.astro';
 import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
@@ -171,10 +173,13 @@ import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
           <div
             class="rounded-xs overflow-hidden shadow-lg border-4 border-accent-700 dark:border-accent-400"
           >
-            <img
-              src="/portrait.jpg"
+            <Image
+              src={portraitImg}
               alt="Andreas Schlapbach"
+              width={800}
+              height={999}
               class="w-full h-auto object-cover"
+              loading="eager"
             />
           </div>
         </div>
