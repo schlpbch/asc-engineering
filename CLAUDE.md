@@ -13,6 +13,8 @@ Single-page resume website for Dr. Andreas Schlapbach. Static Astro site using a
 pnpm dev       # dev server at localhost:4321
 pnpm build     # build to dist/
 pnpm preview   # preview build
+pnpm lint      # check code with strict ESLint rules
+pnpm lint:fix  # auto-fix ESLint issues
 ```
 
 ## Deploy
@@ -39,6 +41,14 @@ gh release create vX.Y.Z --title "vX.Y.Z" --notes "Formatted release notes"
 - **CSS:** TailwindCSS v4 via `@tailwindcss/vite` Vite plugin — no `tailwind.config.js`, all config in `src/styles/global.css`
 - **Design system:** `@mcp-orchestrator/design-system` linked as `file:../mcp-orchestrator-design-system`
 - **Single page:** everything lives in `src/pages/index.astro`; all resume data is plain TypeScript arrays/objects at the top of that file
+
+## Strict mode
+
+- **TypeScript:** `tsconfig.json` extends `astro/tsconfigs/strict` (strictest available)
+- **ESLint:** `eslint.config.mjs` enforces strict rules via typescript-eslint:
+  - `no-console` (warn), `no-debugger` (error)
+  - `no-unused-vars`, `prefer-const`, `eqeqeq`, `no-any` (warn)
+  - `.astro` files excluded (Astro syntax limitations)
 
 ## Key decisions and gotchas
 
