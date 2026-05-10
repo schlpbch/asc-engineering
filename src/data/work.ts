@@ -27,6 +27,8 @@ export const experience: Role[] = [
     location: 'Bern, Switzerland',
     period: 'Dec 2025 – Present',
     bullets: [
+      `Conceived, designed and implemented an ecosystem of 10+ domain-expert AI agents (trip planning, booking, weather, events, hotels) using <a href="https://modelcontextprotocol.io/" ${ta} class="${lc}">MCP protocols</a> and intelligent federation over dynamically discovered schema relationships.`,
+      'Operating agent ecosystem at scale: 1,000+ tool-to-tool dependencies managed deterministically, failure modes recoverable without human intervention.',
       `Rolled out Spec-Driven Development (SDD) to 25+ teams across Java/${a('https://spring.io', 'Spring')}, ${a('https://nextjs.org', 'Next.js')}/${a('https://angular.dev', 'Angular')}, iOS/Android, ${a('https://www.sap.com', 'SAP')}, ${a('https://www.snowflake.com', 'Snowflake')} and ${a('https://www.servicenow.com', 'ServiceNow')} stacks.`,
       `Operationalizing ${a('https://aws.amazon.com/bedrock/', 'AWS Bedrock')} for mission-critical use; member of SBB's AI/ML Centre of Competence.`,
     ],
@@ -80,7 +82,14 @@ export const experience: Role[] = [
 
 export const skills: Record<string, string[]> = {
   Languages: ['TypeScript', 'JavaScript', 'Java', 'Python', 'C/C++'],
-  Architecture: ['Microservices', 'Event-Driven', 'SOA', 'GraphQL', 'REST', 'CQRS'],
+  Architecture: [
+    'Microservices',
+    'Event-Driven',
+    'SOA',
+    'GraphQL',
+    'REST',
+    'CQRS',
+  ],
   Frontend: ['React', 'Next.js', 'Web Components', 'Astro', 'CSS'],
   Infrastructure: ['AWS', 'Docker', 'Kubernetes', 'OpenShift', 'Terraform'],
   'AI / ML': ['LLM Agents', 'MCP', 'AWS Bedrock', 'Google Dialogflow', 'RAG'],
