@@ -1,0 +1,175 @@
+---
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import PageSection from './PageSection.astro';
+---
+
+<PageSection title="About Me">
+  <Stack direction="vertical" size="md">
+    <Card variant="default" size="md">
+      <h3 class="font-semibold text-slate-900 dark:text-white">Background</h3>
+      <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+        I'm an AI/ML Initiative Lead and Enterprise Architect based in Muri bei
+        Bern, Switzerland. With over 25 years of experience building large-scale
+        distributed systems, I've worked at the intersection of software
+        architecture, distributed computing, machine learning, and—most
+        recently—agentic AI systems.
+      </p>
+
+      <h3 class="font-semibold text-slate-900 dark:text-white pt-3">
+        Career Path
+      </h3>
+      <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+        My career has evolved across three distinct chapters:
+      </p>
+      <ul
+        class="list-disc list-inside text-slate-600 dark:text-slate-400 leading-relaxed text-sm"
+      >
+        <li class="pt-1">
+          <strong>Enterprise Architecture & AI Systems (2013–Present):</strong>
+          Led architecture for SBB's omni-channel distribution, next-generation
+          web presence (<a
+            href="https://www.sbb.ch"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+            >sbb.ch</a
+          >), and—most recently—agentic ecosystems using the <a
+            href="https://modelcontextprotocol.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+            >Model Context Protocol</a
+          >.
+        </li>
+        <li class="pt-1">
+          <strong>Machine Learning & Document Analysis (2004–2011):</strong> Applied
+          statistical learning (HMM, GMM, SVM) to handwriting recognition and writer
+          identification, contributing to pattern recognition and document image analysis.
+        </li>
+        <li class="pt-1">
+          <strong>Software Composition & Reengineering (2001–2003):</strong> Focused
+          on formal methods (<a
+            href="https://en.wikipedia.org/wiki/Pi-calculus"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+            >π-calculus</a
+          >), meta-modeling (MOF/XMI), and component-oriented programming at the
+          <a
+            href="https://www.unibe.ch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+            >University of Bern</a
+          >.
+        </li>
+      </ul>
+
+      <h3 class="font-semibold text-slate-900 dark:text-white pt-3">
+        Current Focus
+      </h3>
+      <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+        I lead AI/ML initiatives at <a
+          href="https://www.sbb.ch"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+          >SBB</a
+        >'s Passenger Division, designing ecosystems of domain-expert agents
+        coordinated via the <a
+          href="https://modelcontextprotocol.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+          >Model Context Protocol (MCP)</a
+        >. My recent work explores formal verification of agentic systems,
+        schema-driven interoperability, and scaling LLM-powered tools across
+        large organizations.
+      </p>
+
+      <h3 class="font-semibold text-slate-900 dark:text-white pt-3">
+        Education
+      </h3>
+      <ul
+        class="list-disc list-inside text-slate-600 dark:text-slate-400 leading-relaxed text-sm"
+      >
+        <li class="pt-1">
+          <strong>PhD in Computer Science</strong> — <a
+            href="https://www.unibe.ch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+            >University of Bern</a
+          >, 2008. Dissertation: "Writer Identification and Verification."
+        </li>
+        <li class="pt-1">
+          <strong>Diplom (Master's)</strong> — <a
+            href="https://www.unibe.ch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+            >University of Bern</a
+          >, 2002. Thesis: "Enabling White-Box Reuse in a Pure Composition
+          Language" (<a
+            href="https://scg.unibe.ch/research/piccola"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+            >JPiccola</a
+          >).
+        </li>
+        <li class="pt-1">
+          <strong>Bachelor's</strong> — <a
+            href="https://www.unibe.ch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+            >University of Bern</a
+          >, 2001. Thesis: "Generic XMI Support for the MOOSE Reengineering
+          Environment."
+        </li>
+      </ul>
+
+      <h3 class="font-semibold text-slate-900 dark:text-white pt-3">
+        Open Source & Community
+      </h3>
+      <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+        I'm a long-standing contributor to open-source projects, including
+        contributions to the <a
+          href="https://kde.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+          >KDE HTML rendering engine (khtml)</a
+        > and <a
+          href="https://webkit.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+          >WebKit</a
+        > CSS parser. I'm also the Technical Lead and Product Owner of the <a
+          href="https://osdm.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
+          >Open Sales and Distribution Model (OSDM)</a
+        >, an international API standard for rail ticket distribution, now
+        adopted by all major European railways and leading global distribution
+        systems.
+      </p>
+
+      <h3 class="font-semibold text-slate-900 dark:text-white pt-3">
+        Interests
+      </h3>
+      <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+        Beyond work, I'm fascinated by the intersection of formal methods and
+        practical systems, the challenges of scaling machine learning in
+        production, and the emerging paradigm of agentic AI. I believe the
+        future of enterprise software lies in intelligent, schema-driven agent
+        ecosystems that can dynamically compose tools across organizational and
+        domain boundaries.
+      </p>
+    </Card>
+  </Stack>
+</PageSection>

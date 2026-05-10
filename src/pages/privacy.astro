@@ -1,15 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Container from '@mcp-orchestrator/design-system/components/Container.astro';
-import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import ProseSection from '../components/ProseSection.astro';
 ---
 
 <BaseLayout title="Privacy Statement — asc.engineering" description="Privacy statement and data protection information for asc.engineering.">
-  <section id="privacy" class="py-16">
-    <Container maxWidth="4xl" size="sm">
-      <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">Privacy Statement</h2>
-      <Card variant="default" size="md">
-        <div class="prose prose-invert max-w-none">
+  <ProseSection id="privacy" title="Privacy Statement">
           <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">Data Protection</h3>
           <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
             I take the protection of your personal data very seriously. I treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy statement.
@@ -44,8 +39,6 @@ import Card from '@mcp-orchestrator/design-system/components/Card.astro';
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             I may update this privacy statement from time to time to reflect changes in my practices or for other operational, legal, or regulatory reasons. The most recent version is always available on this website.
           </p>
-        </div>
-      </Card>
-    </Container>
-  </section>
+    </div>
+  </ProseSection>
 </BaseLayout>

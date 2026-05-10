@@ -1,0 +1,19 @@
+---
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import PageSection from './PageSection.astro';
+
+interface Props {
+  id?: string;
+  title: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<PageSection id={id} title={title}>
+  <Card variant="default" size="md">
+    <div class="prose prose-invert max-w-none">
+      <slot />
+    </div>
+  </Card>
+</PageSection>

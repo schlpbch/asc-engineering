@@ -1,0 +1,141 @@
+---
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Input from '@mcp-orchestrator/design-system/components/Input.astro';
+import Textarea from '@mcp-orchestrator/design-system/components/Textarea.astro';
+import Button from '@mcp-orchestrator/design-system/components/Button.astro';
+import PageSection from './PageSection.astro';
+---
+
+<PageSection title="Get in Touch">
+  <Card variant="default" size="md">
+    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+      I'm interested in conversations about AI systems, distributed
+      architecture, spec-driven development, and the future of agentic
+      ecosystems. Feel free to reach out with questions, collaboration ideas, or
+      speaking opportunities.
+    </p>
+
+    <div id="form-status"></div>
+
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="space-y-4"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <div class="hidden"><input name="bot-field" /></div>
+
+      <div class="space-y-2">
+        <label
+          for="name"
+          class="block text-sm font-medium text-slate-900 dark:text-white"
+        >
+          Name <span class="text-red-500">*</span>
+        </label>
+        <Input id="name" type="text" name="name" placeholder="Your name" required />
+      </div>
+
+      <div class="space-y-2">
+        <label
+          for="email"
+          class="block text-sm font-medium text-slate-900 dark:text-white"
+        >
+          Email <span class="text-red-500">*</span>
+        </label>
+        <Input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+        />
+      </div>
+
+      <div class="space-y-2">
+        <label
+          for="subject"
+          class="block text-sm font-medium text-slate-900 dark:text-white"
+        >
+          Subject <span class="text-red-500">*</span>
+        </label>
+        <Input
+          id="subject"
+          type="text"
+          name="subject"
+          placeholder="What is this about?"
+          required
+        />
+      </div>
+
+      <div class="space-y-2">
+        <label
+          for="message"
+          class="block text-sm font-medium text-slate-900 dark:text-white"
+        >
+          Message <span class="text-red-500">*</span>
+        </label>
+        <Textarea
+          id="message"
+          name="message"
+          placeholder="Your message..."
+          rows={6}
+          required
+        />
+      </div>
+
+      <Button type="submit" intent="primary" fullWidth>Send Message</Button>
+    </form>
+  </Card>
+</PageSection>
+
+<script>
+  const form = document.querySelector('form');
+  const statusDiv = document.getElementById('form-status');
+
+  if (form && statusDiv) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      const makeAlert = (ok: boolean, message: string) => {
+        const div = document.createElement('div');
+        div.className = ok
+          ? 'mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg'
+          : 'mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg';
+        const p = document.createElement('p');
+        p.className = ok
+          ? 'text-sm text-green-800 dark:text-green-300 font-medium'
+          : 'text-sm text-red-800 dark:text-red-300 font-medium';
+        p.textContent = message;
+        div.appendChild(p);
+        return div;
+      };
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData as any).toString(),
+        });
+
+        statusDiv.innerHTML = '';
+        if (response.ok) {
+          statusDiv.appendChild(
+            makeAlert(true, "✓ Message sent successfully! I'll get back to you soon.")
+          );
+          form.reset();
+        } else {
+          statusDiv.appendChild(
+            makeAlert(false, 'Something went wrong. Please try again or email directly.')
+          );
+        }
+      } catch {
+        statusDiv.appendChild(
+          makeAlert(false, 'Network error. Please check your connection and try again.')
+        );
+      }
+    });
+  }
+</script>
