@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogPostList from '../../components/BlogPostList.astro';
+import BlogPostList from '../../components/blog/BlogPostList.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog')).sort(
