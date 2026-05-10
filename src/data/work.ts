@@ -27,10 +27,10 @@ export const experience: Role[] = [
     location: 'Bern, Switzerland',
     period: 'Dec 2025 – Present',
     bullets: [
-      `Conceived, designed and implemented an ecosystem of 10+ domain-expert AI agents (trip planning, booking, weather, events, hotels) using <a href="https://modelcontextprotocol.io/" ${ta} class="${lc}">MCP protocols</a> and intelligent federation over dynamically discovered schema relationships.`,
-      'Operating agent ecosystem at scale: 1,000+ tool-to-tool dependencies managed deterministically, failure modes recoverable without human intervention.',
-      `Rolled out Spec-Driven Development (SDD) to 25+ teams across Java/${a('https://spring.io', 'Spring')}, ${a('https://nextjs.org', 'Next.js')}/${a('https://angular.dev', 'Angular')}, iOS/Android, ${a('https://www.sap.com', 'SAP')}, ${a('https://www.snowflake.com', 'Snowflake')} and ${a('https://www.servicenow.com', 'ServiceNow')} stacks.`,
-      `Operationalizing ${a('https://aws.amazon.com/bedrock/', 'AWS Bedrock')} for mission-critical use; member of SBB's AI/ML Centre of Competence.`,
+      `Conceived, designed and implemented an ecosystem of 10+ domain-expert AI agents (trip planning, booking, weather, events, hotels) using MCP protocols and intelligent federation over dynamically discovered schema relationships.`,
+      'Formalized operationalizing an agent ecosystem at scale: 1,000+ tool-to-tool dependencies managed deterministically, failure modes recoverable without human intervention.',
+      `Rolled out Spec-Driven Development (SDD) to 25+ teams across Java/Spring, Next.js/Angular, iOS/Android, SAP, Snowflake and ServiceNow stacks.`,
+      `Operationalizing AWS Bedrock for mission-critical use; member of SBB's AI/ML Centre of Competence.`,
     ],
   },
   {
@@ -39,10 +39,10 @@ export const experience: Role[] = [
     location: 'Bern, Switzerland',
     period: 'Mar 2021 – Feb 2025',
     bullets: [
-      `Designed and built the next generation of ${a('https://www.sbb.ch', "SBB's web presence")}, one of the three most visited sites in Switzerland.`,
+      `Designed and built the next generation of SBB's web presence, one of the three most visited sites in Switzerland.`,
       'Staffed and led three feature teams, one platform team and one design system team.',
-      `Established a headless frontend stack (${a('https://react.dev', 'React')}/${a('https://nextjs.org', 'Next.js')}, Web Components) with cloud-edge infrastructure (${a('https://aws.amazon.com/cloudfront/', 'AWS CloudFront')}, Lambda, WAF, Shield).`,
-      `Consolidated frontend APIs from ${a('https://business.adobe.com/products/experience-manager/adobe-experience-manager.html', 'Adobe AEM')}, ${a('https://business.adobe.com/products/magento/magento-commerce.html', 'Adobe Commerce')}, ${a('https://www.sap.com/products/crm/sales-cloud.html', 'SAP Sales Cloud')}, and ${a('https://www.servicenow.com', 'ServiceNow')} into an enterprise GraphQL graph.`,
+      `Established a headless frontend stack (React/Next.js, Web Components) with cloud-edge infrastructure (AWS CloudFront, Lambda, WAF, Shield).`,
+      `Consolidated frontend APIs from Adobe AEM, Adobe Commerce, SAP Sales Cloud, and ServiceNow into an enterprise GraphQL graph.`,
     ],
   },
   {
@@ -51,8 +51,8 @@ export const experience: Role[] = [
     location: 'Switzerland',
     period: 'Jan 2016 – Present',
     bullets: [
-      `Technical lead and Product Owner of the ${a('https://osdm.io', 'Open Sales and Distribution Model (OSDM)')}, an international API standard for rail ticket distribution.`,
-      `Standard adopted by all major European railways (${a('https://www.bahn.de', 'DB')}, ${a('https://www.sncf.com', 'SNCF')}, ${a('https://www.trenitalia.com', 'Trenitalia')}, ${a('https://www.oebb.at', 'ÖBB')}) and leading global distribution systems (${a('https://www.amadeus.com', 'Amadeus')}, ${a('https://www.sqills.com', 'Sqills')}, ${a('https://www.thetrainline.com', 'Trainline')}, ${a('https://www.sabre.com', 'Sabre')}).`,
+      `Technical lead and Product Owner of the Open Sales and Distribution Model (OSDM), an international API standard for rail ticket distribution.`,
+      `Standard adopted by all major European railways (DB, SNCF, Trenitalia, ÖBB) and leading global distribution systems (Amadeus, Sqills, Trainline, Sabre).`,
       'Built and grew an open-source community of technical experts across Europe.',
     ],
   },
@@ -63,8 +63,8 @@ export const experience: Role[] = [
     period: 'Oct 2017 – Present',
     bullets: [
       'Drove high-level architecture for myRIDE and the next-generation reservation system for Swiss public transportation.',
-      `Initiated and conceptualised SBB's Swiss Mobility APIs and a ${a('https://www.sap.com/products/financial-management/billing.html', 'SAP Hybris Billing')} back-office covering accounting, billing, invoicing, and payment reconciliation.`,
-      `Initiated and designed SBB's voice bot using ${a('https://cloud.google.com/dialogflow', 'Google Dialogflow')} and ${a('https://www.wechat.com', 'WeChat')}/${a('https://global.alipay.com', 'AliPay')} apps for the Asian market.`,
+      `Initiated and conceptualised SBB's Swiss Mobility APIs and SAP Hybris Billing back-office covering accounting, billing, invoicing, and payment reconciliation.`,
+      `Initiated and designed SBB's voice bot using Google Dialogflow and WeChat/AliPay apps for the Asian market.`,
     ],
   },
   {
@@ -73,8 +73,8 @@ export const experience: Role[] = [
     location: 'Bern, Switzerland',
     period: 'Apr 2013 – Dec 2018',
     bullets: [
-      `Led architecture for SBB's omni-channel distribution renewal — 110+ FTEs across 12 distributed teams using a microservice approach on ${a('https://www.redhat.com/en/technologies/cloud-computing/openshift', 'OpenShift')}.`,
-      `Mapped business capabilities to application, data, and infrastructure architecture using a ${a('https://www.opengroup.org/togaf', 'TOGAF')}-driven approach.`,
+      `Led architecture for SBB's omni-channel distribution renewal — 110+ FTEs across 12 distributed teams using a microservice approach.`,
+      `Mapped business capabilities to application, data, and infrastructure architecture using a DDD-driven approach.`,
       'Organisational lead of 4 software architects and 5 developers; successful delivery.',
     ],
   },
