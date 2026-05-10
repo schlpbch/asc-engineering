@@ -1,10 +1,3 @@
-const lc =
-  'text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors';
-const ta = 'target="_blank" rel="noopener noreferrer"';
-
-const a = (href: string, label: string) =>
-  `<a href="${href}" ${ta} class="${lc}">${label}</a>`;
-
 export interface Role {
   title: string;
   company: string;
