@@ -24,6 +24,15 @@ netlify deploy --dir=dist --prod --site=9395bcfb-314c-45ee-9da8-c369bfbbfe63 --a
 
 Token is stored at `~/.netlify/config.json`.
 
+## Release
+
+```bash
+# Check current version in package.json, update if needed (semantic versioning)
+git tag -a vX.Y.Z -m "Release notes"
+git push origin vX.Y.Z
+gh release create vX.Y.Z --title "vX.Y.Z" --notes "Formatted release notes"
+```
+
 ## Architecture
 
 - **Framework:** Astro 6 (static output)
