@@ -5,6 +5,9 @@ import Card from '@mcp-orchestrator/design-system/components/Card.astro';
 import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
 import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
 
+const lc = 'text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors';
+const ta = 'target="_blank" rel="noopener noreferrer"';
+
 const experience = [
   {
     title: 'AI/ML Initiative Lead, Passenger Division',
@@ -12,10 +15,10 @@ const experience = [
     location: 'Bern, Switzerland',
     period: 'Dec 2025 – Present',
     bullets: [
-      'Conceived, designed and implemented an ecosystem of 10+ domain-expert AI agents (trip planning, booking, weather, events, hotels) using MCP protocols and intelligent federation over dynamically discovered schema relationships.',
+      `Conceived, designed and implemented an ecosystem of 10+ domain-expert AI agents (trip planning, booking, weather, events, hotels) using <a href="https://modelcontextprotocol.io/" ${ta} class="${lc}">MCP protocols</a> and intelligent federation over dynamically discovered schema relationships.`,
       'Operating agent ecosystem at scale: 1,000+ tool-to-tool dependencies managed deterministically, failure modes recoverable without human intervention.',
       'Rolled out Spec-Driven Development (SDD) to 25+ teams across Java/Spring, Next.js/Angular, iOS/Android, SAP, Snowflake and ServiceNow stacks.',
-      "Operationalizing AWS Bedrock for mission-critical use; member of SBB's AI/ML Centre of Competence.",
+      `Operationalizing <a href="https://aws.amazon.com/bedrock/" ${ta} class="${lc}">AWS Bedrock</a> for mission-critical use; member of SBB's AI/ML Centre of Competence.`,
     ],
   },
   {
@@ -24,7 +27,7 @@ const experience = [
     location: 'Bern, Switzerland',
     period: 'Mar 2021 – Feb 2025',
     bullets: [
-      "Designed and built the next generation of SBB's web presence, one of the three most visited sites in Switzerland.",
+      `Designed and built the next generation of <a href="https://www.sbb.ch" ${ta} class="${lc}">SBB's web presence</a>, one of the three most visited sites in Switzerland.`,
       'Staffed and led three feature teams, one platform team and one design system team.',
       'Established a headless frontend stack (React/Next.js, Web Components) with cloud-edge infrastructure (AWS CloudFront, Lambda, WAF, Shield).',
       'Consolidated frontend APIs from Adobe AEM, Adobe Commerce, SAP Sales Cloud, and ServiceNow into an enterprise GraphQL graph.',
@@ -36,8 +39,8 @@ const experience = [
     location: 'Switzerland',
     period: 'Jan 2016 – Present',
     bullets: [
-      'Technical lead and Product Owner of the Open Sales and Distribution Model (OSDM), an international API standard for rail ticket distribution.',
-      'Standard adopted by all major European railways (DB, SNCF, Trenitalia, ÖBB) and leading global distribution systems (Amadeus, Sqills, Trainline, Sabre).',
+      `Technical lead and Product Owner of the <a href="https://osdm.org" ${ta} class="${lc}">Open Sales and Distribution Model (OSDM)</a>, an international API standard for rail ticket distribution.`,
+      `Standard adopted by all major European railways (<a href="https://www.bahn.de" ${ta} class="${lc}">DB</a>, <a href="https://www.sncf.com" ${ta} class="${lc}">SNCF</a>, <a href="https://www.trenitalia.com" ${ta} class="${lc}">Trenitalia</a>, <a href="https://www.oebb.at" ${ta} class="${lc}">ÖBB</a>) and leading global distribution systems (<a href="https://www.amadeus.com" ${ta} class="${lc}">Amadeus</a>, <a href="https://www.sqills.com" ${ta} class="${lc}">Sqills</a>, <a href="https://www.thetrainline.com" ${ta} class="${lc}">Trainline</a>, <a href="https://www.sabre.com" ${ta} class="${lc}">Sabre</a>).`,
       'Built and grew an open-source community of technical experts across Europe.',
     ],
   },
@@ -49,7 +52,7 @@ const experience = [
     bullets: [
       'Drove high-level architecture for myRIDE and the next-generation reservation system for Swiss public transportation.',
       "Initiated and conceptualised SBB's Swiss Mobility APIs and a SAP Hybris Billing back-office covering accounting, billing, invoicing, and payment reconciliation.",
-      "Initiated and designed SBB's voice bot using Google Dialogflow and WeChat/AliPay apps for the Asian market.",
+      `Initiated and designed SBB's voice bot using <a href="https://cloud.google.com/dialogflow" ${ta} class="${lc}">Google Dialogflow</a> and WeChat/AliPay apps for the Asian market.`,
     ],
   },
   {
@@ -58,8 +61,8 @@ const experience = [
     location: 'Bern, Switzerland',
     period: 'Apr 2013 – Dec 2018',
     bullets: [
-      "Led architecture for SBB's omni-channel distribution renewal — 110+ FTEs across 12 distributed teams using a microservice approach on OpenShift.",
-      'Mapped business capabilities to application, data, and infrastructure architecture using a TOGAF-driven approach.',
+      `Led architecture for SBB's omni-channel distribution renewal — 110+ FTEs across 12 distributed teams using a microservice approach on <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift" ${ta} class="${lc}">OpenShift</a>.`,
+      `Mapped business capabilities to application, data, and infrastructure architecture using a <a href="https://www.opengroup.org/togaf" ${ta} class="${lc}">TOGAF</a>-driven approach.`,
       'Organisational lead of 4 software architects and 5 developers; successful delivery.',
     ],
   },
@@ -157,7 +160,7 @@ const projects = [
                 {role.bullets.map((b) => (
                   <p class="text-sm text-slate-600 dark:text-slate-400 flex gap-2">
                     <span class="text-accent-500 mt-0.5 shrink-0">›</span>
-                    {b}
+                    <Fragment set:html={b} />
                   </p>
                 ))}
               </Stack>
