@@ -1,0 +1,41 @@
+---
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+
+interface Props {
+  skills: Record<string, string[]>;
+}
+
+const { skills } = Astro.props;
+---
+
+<section
+  id="skills"
+  class="py-16 border-b border-slate-100 dark:border-slate-800"
+>
+  <Container maxWidth="4xl" size="sm">
+    <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">
+      Skills
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {
+        Object.entries(skills).map(([category, items]) => (
+          <Card variant="filled" size="sm">
+            <p class="text-xs font-semibold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-3">
+              {category}
+            </p>
+            <Stack direction="horizontal" size="xs" wrap>
+              {items.map((skill) => (
+                <Badge intent="primary" variant="default" size="sm" shape="pill">
+                  {skill}
+                </Badge>
+              ))}
+            </Stack>
+          </Card>
+        ))
+      }
+    </div>
+  </Container>
+</section>

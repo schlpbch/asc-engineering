@@ -1,0 +1,60 @@
+---
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import PageSection from './PageSection.astro';
+import type { Contribution } from '../data/opensource';
+
+interface Props {
+  contributions: Contribution[];
+}
+
+const { contributions } = Astro.props;
+---
+
+<PageSection
+  title="Open Source"
+  subtitle="Contributions spanning browser engines, open API standards, and agentic AI tooling."
+>
+  <Stack direction="vertical" size="md">
+    {
+      contributions.map((item) => (
+        <Card variant="default" size="md">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+            <div>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-semibold text-slate-900 dark:text-white hover:text-accent-700 dark:hover:text-accent-400 transition-colors"
+              >
+                {item.name}
+              </a>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+                {item.role}
+              </p>
+            </div>
+            <Badge
+              intent="secondary"
+              variant="outline"
+              size="sm"
+              className="shrink-0"
+            >
+              {item.period}
+            </Badge>
+          </div>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            {item.description}
+          </p>
+          <div class="mt-3 flex flex-wrap gap-1.5">
+            {item.tags.map((tag) => (
+              <Badge intent="secondary" variant="default" size="sm">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </Card>
+      ))
+    }
+  </Stack>
+</PageSection>

@@ -1,0 +1,78 @@
+---
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import PageSection from './PageSection.astro';
+import PublicationList from './PublicationList.astro';
+import type { Publication } from '../data/publications';
+
+interface Props {
+  publications: {
+    inReview: Publication[];
+    booksAndJournals: Publication[];
+    conferencesPapers: Publication[];
+    presentations: Publication[];
+    theses: Publication[];
+  };
+}
+
+const { publications: pubs } = Astro.props;
+
+const groups = [
+  {
+    title: 'In Review',
+    intent: 'warning' as const,
+    badge: 'Under Review',
+    items: pubs.inReview,
+    linkLabel: 'arXiv',
+  },
+  {
+    title: 'Books, Chapters & Journals',
+    intent: 'success' as const,
+    badge: `${pubs.booksAndJournals.length} publications`,
+    items: pubs.booksAndJournals,
+    linkLabel: 'PDF',
+  },
+  {
+    title: 'Conference Papers',
+    intent: 'info' as const,
+    badge: `${pubs.conferencesPapers.length} papers`,
+    items: pubs.conferencesPapers,
+    linkLabel: 'PDF',
+  },
+  {
+    title: 'Presentations',
+    intent: 'info' as const,
+    badge: `${pubs.presentations.length} presentations`,
+    items: pubs.presentations,
+    linkLabel: 'PDF',
+  },
+  {
+    title: 'Theses',
+    intent: 'secondary' as const,
+    badge: `${pubs.theses.length} theses`,
+    items: pubs.theses,
+    linkLabel: 'PDF',
+  },
+];
+---
+
+<PageSection id="publications" title="Publications" border>
+  <Stack direction="vertical" size="md">
+    {
+      groups.map((group) => (
+        <Card variant="default" size="md">
+          <Stack direction="horizontal" align="center" size="sm" className="mb-4">
+            <h3 class="font-semibold text-slate-900 dark:text-white">
+              {group.title}
+            </h3>
+            <Badge intent={group.intent} variant="default" size="sm" shape="pill">
+              {group.badge}
+            </Badge>
+          </Stack>
+          <PublicationList items={group.items} linkLabel={group.linkLabel} />
+        </Card>
+      ))
+    }
+  </Stack>
+</PageSection>

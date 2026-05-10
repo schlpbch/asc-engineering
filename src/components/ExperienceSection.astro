@@ -1,0 +1,58 @@
+---
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import type { Role } from '../data/work';
+
+interface Props {
+  experience: Role[];
+}
+
+const { experience } = Astro.props;
+---
+
+<section
+  id="experience"
+  class="py-16 border-b border-slate-100 dark:border-slate-800"
+>
+  <Container maxWidth="4xl" size="sm">
+    <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">
+      Experience
+    </h2>
+    <Stack direction="vertical" size="md">
+      {
+        experience.map((role) => (
+          <Card variant="default" size="md">
+            <Stack
+              direction="horizontal"
+              align="start"
+              justify="between"
+              className="flex-col sm:flex-row mb-3"
+            >
+              <div>
+                <h3 class="font-semibold text-slate-900 dark:text-white">
+                  {role.title}
+                </h3>
+                <p class="text-sm text-accent-700 dark:text-accent-400">
+                  {role.company} · {role.location}
+                </p>
+              </div>
+              <Badge intent="secondary" variant="outline" size="sm" shape="pill">
+                {role.period}
+              </Badge>
+            </Stack>
+            <Stack direction="vertical" size="xs">
+              {role.bullets.map((b) => (
+                <p class="text-sm text-slate-600 dark:text-slate-400 flex gap-2">
+                  <span class="text-accent-500 mt-0.5 shrink-0">›</span>
+                  <Fragment set:html={b} />
+                </p>
+              ))}
+            </Stack>
+          </Card>
+        ))
+      }
+    </Stack>
+  </Container>
+</section>

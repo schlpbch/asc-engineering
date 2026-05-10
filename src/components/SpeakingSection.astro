@@ -1,0 +1,24 @@
+---
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Button from '@mcp-orchestrator/design-system/components/Button.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import PageSection from './PageSection.astro';
+---
+
+<PageSection title="Speaking">
+  <Stack direction="vertical" size="lg">
+    <Card variant="default" size="md">
+      <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-3">
+        Available for Speaking
+      </h3>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+        I'm interested in speaking opportunities at conferences, workshops, and
+        industry events. Topics include agentic AI systems, formal methods,
+        distributed architecture, and enterprise-scale machine learning.
+      </p>
+      <a href="/contact" class="inline-block">
+        <Button intent="primary">Get in Touch</Button>
+      </a>
+    </Card>
+  </Stack>
+</PageSection>

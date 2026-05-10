@@ -1,0 +1,56 @@
+---
+import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Card from '@mcp-orchestrator/design-system/components/Card.astro';
+import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
+import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import type { Project } from '../data/work';
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section id="projects" class="py-16">
+  <Container maxWidth="4xl" size="sm">
+    <h2 class="text-xl font-semibold mb-8 text-slate-900 dark:text-white">
+      Projects
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {
+        projects.map((project) => (
+          <a
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group block no-underline"
+          >
+            <Card variant="default" size="md" interactive className="h-full">
+              <Stack direction="vertical" size="sm" className="h-full">
+                <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
+                  {project.name}
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-1">
+                  {project.description}
+                </p>
+                <Stack direction="horizontal" size="xs" wrap>
+                  {project.tech.map((t) => (
+                    <Badge
+                      intent="secondary"
+                      variant="outline"
+                      size="sm"
+                      shape="rounded"
+                    >
+                      {t}
+                    </Badge>
+                  ))}
+                </Stack>
+              </Stack>
+            </Card>
+          </a>
+        ))
+      }
+    </div>
+  </Container>
+</section>
