@@ -4,7 +4,8 @@ import Stack from '@asc-engineering/design-system/components/Stack.astro';
 import Badge from '@asc-engineering/design-system/components/Badge.astro';
 import PageSection from '../layout/PageSection.astro';
 
-const link = 'text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 transition-colors underline underline-offset-2';
+const link =
+  'text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 transition-colors underline underline-offset-2';
 ---
 
 <PageSection title="About Me">
@@ -16,10 +17,16 @@ const link = 'text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:ho
           AI/ML Initiative Lead & Enterprise Architect
         </h2>
         <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
-          Based in Muri bei Bern, Switzerland. Over 25 years building large-scale
-          distributed systems at the intersection of software architecture, machine
-          learning, and agentic AI. Currently leading AI initiatives at
-          <a href="https://www.sbb.ch" target="_blank" rel="noopener noreferrer" class={link}>SBB</a>.
+          Based in Muri bei Bern, Switzerland. Over 25 years building
+          large-scale distributed systems at the intersection of software
+          architecture, machine learning, and agentic AI. Currently leading AI
+          initiatives at
+          <a
+            href="https://www.sbb.ch"
+            target="_blank"
+            rel="noopener noreferrer"
+            class={link}>SBB</a
+          >.
         </p>
       </div>
     </Card>
@@ -28,47 +35,79 @@ const link = 'text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:ho
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <Card variant="outlined">
         <div class="flex flex-col gap-3">
-          <h3 class="font-bold text-slate-900 dark:text-white">AI & Agentic Systems</h3>
+          <h3 class="font-bold text-slate-900 dark:text-white">
+            AI & Agentic Systems
+          </h3>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             Designing domain-expert agents coordinated via
-            <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer" class={link}>Model Context Protocol (MCP)</a>.
-            Exploring formal verification, schema-driven interoperability, and LLM tool scaling.
+            <a
+              href="https://modelcontextprotocol.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={link}>Model Context Protocol (MCP)</a
+            >. Exploring formal verification, schema-driven interoperability,
+            and LLM tool scaling.
           </p>
-          <span class="text-xs font-medium text-slate-500 dark:text-slate-400">2013–Present</span>
+          <span class="text-xs font-medium text-slate-500 dark:text-slate-400"
+            >2013–Present</span
+          >
         </div>
       </Card>
 
       <Card variant="outlined">
         <div class="flex flex-col gap-3">
-          <h3 class="font-bold text-slate-900 dark:text-white">Large-Scale Architecture</h3>
+          <h3 class="font-bold text-slate-900 dark:text-white">
+            Large-Scale Architecture
+          </h3>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Led architecture for SBB's omni-channel distribution and next-generation
-            <a href="https://www.sbb.ch" target="_blank" rel="noopener noreferrer" class={link}>sbb.ch</a>
+            Led architecture for SBB's omni-channel distribution and
+            next-generation
+            <a
+              href="https://www.sbb.ch"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={link}>sbb.ch</a
+            >
             platform. Enterprise AI system design.
           </p>
-          <span class="text-xs font-medium text-slate-500 dark:text-slate-400">2013–Present</span>
+          <span class="text-xs font-medium text-slate-500 dark:text-slate-400"
+            >2013–Present</span
+          >
         </div>
       </Card>
 
       <Card variant="outlined">
         <div class="flex flex-col gap-3">
-          <h3 class="font-bold text-slate-900 dark:text-white">Machine Learning</h3>
+          <h3 class="font-bold text-slate-900 dark:text-white">
+            Machine Learning
+          </h3>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Statistical learning (HMM, GMM, SVM) for handwriting recognition, writer
-            identification, and document image analysis.
+            Statistical learning (HMM, GMM, SVM) for handwriting recognition,
+            writer identification, and document image analysis.
           </p>
-          <span class="text-xs font-medium text-slate-500 dark:text-slate-400">2004–2011</span>
+          <span class="text-xs font-medium text-slate-500 dark:text-slate-400"
+            >2004–2011</span
+          >
         </div>
       </Card>
 
       <Card variant="outlined">
         <div class="flex flex-col gap-3">
-          <h3 class="font-bold text-slate-900 dark:text-white">Formal Methods</h3>
+          <h3 class="font-bold text-slate-900 dark:text-white">
+            Formal Methods
+          </h3>
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Process algebra (<a href="https://en.wikipedia.org/wiki/Pi-calculus" target="_blank" rel="noopener noreferrer" class={link}>π-calculus</a>),
-            meta-modeling (MOF/XMI), component-oriented programming. 20-year arc to agentic verification.
+            Process algebra (<a
+              href="https://en.wikipedia.org/wiki/Pi-calculus"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={link}>π-calculus</a
+            >), meta-modeling (MOF/XMI), component-oriented programming. 20-year
+            arc to agentic verification.
           </p>
-          <span class="text-xs font-medium text-slate-500 dark:text-slate-400">2001–2003</span>
+          <span class="text-xs font-medium text-slate-500 dark:text-slate-400"
+            >2001–2003</span
+          >
         </div>
       </Card>
     </div>
@@ -76,32 +115,61 @@ const link = 'text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:ho
     {/* Education */}
     <Card variant="default">
       <div class="flex flex-col gap-4">
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Education</h3>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+          Education
+        </h3>
 
         <div class="flex flex-col gap-3">
           <div class="border-l-2 border-accent-300 dark:border-accent-700 pl-4">
-            <h4 class="font-semibold text-slate-900 dark:text-white">PhD in Computer Science</h4>
+            <h4 class="font-semibold text-slate-900 dark:text-white">
+              PhD in Computer Science (summa cum laude)
+            </h4>
             <p class="text-sm text-slate-600 dark:text-slate-400">
-              <a href="https://www.unibe.ch/" target="_blank" rel="noopener noreferrer" class={link}>University of Bern</a>, 2008
-            </p>
-            <p class="text-sm text-slate-500 dark:text-slate-400 italic">Writer Identification and Verification</p>
-          </div>
-
-          <div class="border-l-2 border-accent-300 dark:border-accent-700 pl-4">
-            <h4 class="font-semibold text-slate-900 dark:text-white">Diplom (Master's)</h4>
-            <p class="text-sm text-slate-600 dark:text-slate-400">
-              <a href="https://www.unibe.ch/" target="_blank" rel="noopener noreferrer" class={link}>University of Bern</a>, 2002
+              <a
+                href="https://www.unibe.ch/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={link}>University of Bern</a
+              >, 2008
             </p>
             <p class="text-sm text-slate-500 dark:text-slate-400 italic">
-              Enabling White-Box Reuse in a Pure Composition Language
-              (<a href="https://scg.unibe.ch/research/piccola" target="_blank" rel="noopener noreferrer" class={link}>JPiccola</a>)
+              Writer Identification and Verification
             </p>
           </div>
 
           <div class="border-l-2 border-accent-300 dark:border-accent-700 pl-4">
-            <h4 class="font-semibold text-slate-900 dark:text-white">Bachelor's</h4>
+            <h4 class="font-semibold text-slate-900 dark:text-white">
+              Diplom (Master's)
+            </h4>
             <p class="text-sm text-slate-600 dark:text-slate-400">
-              <a href="https://www.unibe.ch/" target="_blank" rel="noopener noreferrer" class={link}>University of Bern</a>, 2001
+              <a
+                href="https://www.unibe.ch/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={link}>University of Bern</a
+              >, 2002
+            </p>
+            <p class="text-sm text-slate-500 dark:text-slate-400 italic">
+              Enabling White-Box Reuse in a Pure Composition Language (<a
+                href="https://scg.unibe.ch/research/piccola"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={link}>JPiccola</a
+              >)
+            </p>
+          </div>
+
+          <div class="border-l-2 border-accent-300 dark:border-accent-700 pl-4">
+            <h4 class="font-semibold text-slate-900 dark:text-white">
+              Bachelor's
+            </h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              <a
+                href="https://www.unibe.ch/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class={link}>University of Bern</a
+              >, 2001
             </p>
             <p class="text-sm text-slate-500 dark:text-slate-400 italic">
               Generic XMI Support for the MOOSE Reengineering Environment
@@ -114,21 +182,40 @@ const link = 'text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:ho
     {/* Open Source */}
     <Card variant="default">
       <div class="flex flex-col gap-3">
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Open Source & Standardization</h3>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+          Open Source & Standardization
+        </h3>
 
         <div class="space-y-3">
           <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
             Long-standing contributor to open-source projects including
-            <a href="https://kde.org/" target="_blank" rel="noopener noreferrer" class={link}>KDE KHTML</a>
+            <a
+              href="https://kde.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={link}>KDE KHTML</a
+            >
             and
-            <a href="https://webkit.org/" target="_blank" rel="noopener noreferrer" class={link}>WebKit</a>
+            <a
+              href="https://webkit.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={link}>WebKit</a
+            >
             CSS parser (2001–2005).
           </p>
 
           <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
             Technical Lead & Product Owner of the
-            <a href="https://osdm.org/" target="_blank" rel="noopener noreferrer" class={link}>Open Sales and Distribution Model (OSDM)</a>
-            — an international REST API standard for rail ticket distribution. Adopted by all major European railways (SBB, DB, SNCF, ÖBB) and leading global distribution systems.
+            <a
+              href="https://osdm.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={link}>Open Sales and Distribution Model (OSDM)</a
+            >
+            — an international REST API standard for rail ticket distribution. Adopted
+            by all major European railways (SBB, DB, SNCF, ÖBB) and leading global
+            distribution systems.
           </p>
 
           <div class="flex flex-wrap gap-2 pt-2">
@@ -144,19 +231,36 @@ const link = 'text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:ho
     {/* Philosophy */}
     <Card variant="default">
       <div class="flex flex-col gap-3">
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Interests & Philosophy</h3>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+          Interests & Philosophy
+        </h3>
         <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-          I'm drawn to questions at the boundary of formal specification and running systems:
-          when does a schema become a contract, and when does a contract become a proof?
+          I'm drawn to questions at the boundary of formal specification and
+          running systems: when does a schema become a contract, and when does a
+          contract become a proof?
         </p>
         <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-          I find the same question animates Swiss typeface design, long-distance hiking routes,
-          and the bisimilarity conditions in formal process calculus — which is either a
-          unifying insight or a professional hazard, possibly both.
+          More over I'm deeply interested in programming language design,
+          especially their semantics and expressiveness for modeling complex
+          systems. Especially im interested in type systems, and how they can be
+          used to capture invariants and enable safe composition in large-scale
+          software.
         </p>
-        <p class="text-sm">
-          More on that in
-          <a href="/hobbies" class={link}>Hobbies</a>.
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+          Furthermore, I'm deeply fascinated by the work of <a
+            href="https://en.wikipedia.org/wiki/Claude_Shannon"
+            target="_blank"
+            rel="noopener noreferrer"
+            class={link}>Claude Shannon</a
+          >, and the profound implications of information theory for
+          understanding communication, complexity, and the limits of
+          computation. I find that Shannon's insights continue to resonate
+          across disciplines, from machine learning to software architecture,
+          and provide a powerful lens for thinking about the flow of information
+          in complex systems.
+        </p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+          I also have real <a href="/hobbies" class={link}>hobbies</a>.
         </p>
       </div>
     </Card>
