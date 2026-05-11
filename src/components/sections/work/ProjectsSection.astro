@@ -1,8 +1,5 @@
 ---
-import Card from '@asc-engineering/design-system/components/Card.astro';
-import Badge from '@asc-engineering/design-system/components/Badge.astro';
-import Stack from '@asc-engineering/design-system/components/Stack.astro';
-import PageSection from '../../layout/PageSection.astro';
+import ProjectGrid from '@asc-engineering/design-system/patterns/ProjectGrid.astro';
 import type { Project } from '../../../data/work';
 
 interface Props {
@@ -12,40 +9,4 @@ interface Props {
 const { projects } = Astro.props;
 ---
 
-<PageSection id="projects" title="Projects">
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    {
-      projects.map((project) => (
-        <a
-          href={project.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group block no-underline"
-        >
-          <Card variant="default" size="md" interactive className="h-full">
-            <Stack direction="vertical" size="sm" className="h-full">
-              <h3 class="font-semibold text-slate-900 dark:text-white group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
-                {project.name}
-              </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-1">
-                {project.description}
-              </p>
-              <Stack direction="horizontal" size="xs" wrap>
-                {project.tech.map((t) => (
-                  <Badge
-                    intent="secondary"
-                    variant="outline"
-                    size="sm"
-                    shape="rounded"
-                  >
-                    {t}
-                  </Badge>
-                ))}
-              </Stack>
-            </Stack>
-          </Card>
-        </a>
-      ))
-    }
-  </div>
-</PageSection>
+<ProjectGrid id="projects" title="Projects" {projects} />
