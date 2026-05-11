@@ -3,12 +3,22 @@ import Card from '@asc-engineering/design-system/components/Card.astro';
 import Badge from '@asc-engineering/design-system/components/Badge.astro';
 import Stack from '@asc-engineering/design-system/components/Stack.astro';
 import PageSection from '../../layout/PageSection.astro';
+import type { Skill } from '../../../data/work';
 
 interface Props {
-  skills: Record<string, string[]>;
+  skills: Record<string, Skill[]>;
 }
 
 const { skills } = Astro.props;
+
+const levelIntent = (level: string) => {
+  switch (level) {
+    case 'expert': return 'primary';
+    case 'proficient': return 'secondary';
+    case 'familiar': return 'outline';
+    default: return 'primary';
+  }
+};
 ---
 
 <PageSection id="skills" title="Skills" border>
@@ -19,15 +29,32 @@ const { skills } = Astro.props;
           <p class="text-xs font-semibold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-3">
             {category}
           </p>
-          <Stack direction="horizontal" size="xs" wrap>
-            {items.map((skill) => (
-              <Badge intent="primary" variant="default" size="sm" shape="pill">
-                {skill}
-              </Badge>
-            ))}
+          <Stack direction="vertical" size="sm">
+            <Stack direction="horizontal" size="xs" wrap>
+              {items.map((skill) => (
+                <Badge intent={levelIntent(skill.level)} variant="default" size="sm" shape="pill">
+                  {skill.name}
+                </Badge>
+              ))}
+            </Stack>
           </Stack>
         </Card>
       ))
     }
+  </div>
+
+  <div class="mt-8 flex gap-6 justify-center text-sm">
+    <div class="flex items-center gap-2">
+      <div class="w-2 h-2 rounded-full bg-accent-600 dark:bg-accent-400" />
+      <span class="text-slate-700 dark:text-slate-300">Expert</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="w-2 h-2 rounded-full bg-slate-600 dark:bg-slate-400" />
+      <span class="text-slate-700 dark:text-slate-300">Proficient</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="w-2 h-2 rounded-full border-2 border-slate-600 dark:border-slate-400" />
+      <span class="text-slate-700 dark:text-slate-300">Familiar</span>
+    </div>
   </div>
 </PageSection>

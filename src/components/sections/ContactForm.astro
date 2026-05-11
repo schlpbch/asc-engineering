@@ -3,6 +3,7 @@ import Card from '@asc-engineering/design-system/components/Card.astro';
 import Input from '@asc-engineering/design-system/components/Input.astro';
 import Textarea from '@asc-engineering/design-system/components/Textarea.astro';
 import Button from '@asc-engineering/design-system/components/Button.astro';
+import Alert from '@asc-engineering/design-system/components/Alert.astro';
 import PageSection from '../layout/PageSection.astro';
 ---
 
@@ -107,13 +108,20 @@ import PageSection from '../layout/PageSection.astro';
 
       const makeAlert = (ok: boolean, message: string) => {
         const div = document.createElement('div');
-        div.className = ok
-          ? 'mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg'
-          : 'mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg';
+        const [bgClass, borderClass, textClass] = ok
+          ? [
+              'bg-green-50 dark:bg-green-950/30',
+              'border-green-200 dark:border-green-800',
+              'text-green-800 dark:text-green-300',
+            ]
+          : [
+              'bg-red-50 dark:bg-red-950/30',
+              'border-red-200 dark:border-red-800',
+              'text-red-800 dark:text-red-300',
+            ];
+        div.className = `mb-6 p-4 border rounded-lg ${bgClass} ${borderClass}`;
         const p = document.createElement('p');
-        p.className = ok
-          ? 'text-sm text-green-800 dark:text-green-300 font-medium'
-          : 'text-sm text-red-800 dark:text-red-300 font-medium';
+        p.className = `text-sm font-medium ${textClass}`;
         p.textContent = message;
         div.appendChild(p);
         return div;

@@ -1,0 +1,56 @@
+---
+import Card from '@asc-engineering/design-system/components/Card.astro';
+import Badge from '@asc-engineering/design-system/components/Badge.astro';
+import Stack from '@asc-engineering/design-system/components/Stack.astro';
+import PageSection from '../layout/PageSection.astro';
+import type { Project } from '../../data/work';
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<PageSection id="featured-work" title="Featured Work" border>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    {
+      projects.map((project) => (
+        <a href={project.href} target="_blank" rel="noopener noreferrer">
+          <Card variant="interactive" size="md" className="h-full">
+            <Stack direction="vertical" size="md">
+              <div>
+                <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                  {project.name}
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
+              <Stack direction="horizontal" size="xs" wrap>
+                {project.tech.map((tech) => (
+                  <Badge
+                    intent="secondary"
+                    variant="outline"
+                    size="xs"
+                    shape="pill"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </Stack>
+            </Stack>
+          </Card>
+        </a>
+      ))
+    }
+  </div>
+  <div class="mt-8 text-center">
+    <a
+      href="/work"
+      class="text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 transition-colors font-medium"
+    >
+      View all work &rarr;
+    </a>
+  </div>
+</PageSection>

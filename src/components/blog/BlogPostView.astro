@@ -15,6 +15,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
 });
+const readingTime = Math.ceil(post.body.split(/\s+/).length / 200);
 ---
 
 <section class="py-16">
@@ -43,6 +44,9 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
       >
         <span class="text-sm text-slate-600 dark:text-slate-400"
           >{formattedDate}</span
+        >
+        <span class="text-sm text-slate-600 dark:text-slate-400"
+          >{readingTime} min read</span
         >
         {
           post.data.tags.length > 0 && (

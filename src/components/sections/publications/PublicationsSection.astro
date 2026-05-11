@@ -19,13 +19,15 @@ const { publications: pubs } = Astro.props;
 
 const groups = [
   {
+    id: 'inReview',
     title: 'In Review',
     intent: 'warning' as const,
-    badge: 'Under Review',
+    badge: 'Preprint',
     items: pubs.inReview,
     linkLabel: 'arXiv',
   },
   {
+    id: 'booksAndJournals',
     title: 'Books, Chapters & Journals',
     intent: 'success' as const,
     badge: `${pubs.booksAndJournals.length} publications`,
@@ -33,6 +35,7 @@ const groups = [
     linkLabel: 'PDF',
   },
   {
+    id: 'conferencesPapers',
     title: 'Conference Papers',
     intent: 'info' as const,
     badge: `${pubs.conferencesPapers.length} papers`,
@@ -40,6 +43,7 @@ const groups = [
     linkLabel: 'PDF',
   },
   {
+    id: 'theses',
     title: 'Theses',
     intent: 'secondary' as const,
     badge: `${pubs.theses.length} theses`,
@@ -50,31 +54,105 @@ const groups = [
 ---
 
 <PageSection id="publications" title="Publications" border>
+  {/* Filter buttons */}
+  <div
+    class="flex flex-wrap gap-2 mb-8 pb-6 border-b border-slate-200 dark:border-slate-800"
+  >
+    <button
+      data-filter="all"
+      class="filter-btn px-3 py-1.5 rounded-lg text-sm font-medium bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-400 transition-colors active"
+    >
+      All
+    </button>
+    {
+      groups.map((group) => (
+        <button
+          data-filter={group.id}
+          class="filter-btn px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+        >
+          {group.title}
+        </button>
+      ))
+    }
+  </div>
+
+  {/* Publications by group */}
   <Stack direction="vertical" size="md">
     {
       groups.map((group) => (
-        <Card variant="default" size="md">
-          <Stack
-            direction="horizontal"
-            align="center"
-            size="sm"
-            className="mb-4"
-          >
-            <h3 class="font-semibold text-slate-900 dark:text-white">
-              {group.title}
-            </h3>
-            <Badge
-              intent={group.intent}
-              variant="default"
+        <div data-group={group.id} class="group-section">
+          <Card variant="default" size="md">
+            <Stack
+              direction="horizontal"
+              align="center"
               size="sm"
-              shape="pill"
+              className="mb-4"
             >
-              {group.badge}
-            </Badge>
-          </Stack>
-          <PublicationList items={group.items} linkLabel={group.linkLabel} />
-        </Card>
+              <h3 class="font-semibold text-slate-900 dark:text-white">
+                {group.title}
+              </h3>
+              <Badge
+                intent={group.intent}
+                variant="default"
+                size="sm"
+                shape="pill"
+              >
+                {group.badge}
+              </Badge>
+            </Stack>
+            <PublicationList items={group.items} linkLabel={group.linkLabel} />
+          </Card>
+        </div>
       ))
     }
   </Stack>
 </PageSection>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const groupSections = document.querySelectorAll('.group-section');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      // Update active button
+      filterBtns.forEach((b) => {
+        b.classList.remove(
+          'bg-accent-100',
+          'dark:bg-accent-900/30',
+          'text-accent-700',
+          'dark:text-accent-400',
+        );
+        b.classList.add(
+          'bg-slate-100',
+          'dark:bg-slate-800',
+          'text-slate-600',
+          'dark:text-slate-400',
+        );
+      });
+      btn.classList.remove(
+        'bg-slate-100',
+        'dark:bg-slate-800',
+        'text-slate-600',
+        'dark:text-slate-400',
+      );
+      btn.classList.add(
+        'bg-accent-100',
+        'dark:bg-accent-900/30',
+        'text-accent-700',
+        'dark:text-accent-400',
+      );
+
+      // Show/hide groups
+      groupSections.forEach((section) => {
+        const groupId = section.dataset.group;
+        if (filter === 'all' || filter === groupId) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>

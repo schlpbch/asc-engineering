@@ -6,6 +6,11 @@ export interface Role {
   bullets: string[];
 }
 
+export interface Skill {
+  name: string;
+  level: 'expert' | 'proficient' | 'familiar';
+}
+
 export interface Project {
   name: string;
   description: string;
@@ -73,20 +78,49 @@ export const experience: Role[] = [
   },
 ];
 
-export const skills: Record<string, string[]> = {
-  Languages: ['TypeScript', 'JavaScript', 'Java', 'Python', 'C/C++'],
-  Architecture: [
-    'Microservices',
-    'Event-Driven',
-    'SOA',
-    'GraphQL',
-    'REST',
-    'CQRS',
+export const skills: Record<string, Skill[]> = {
+  Languages: [
+    { name: 'TypeScript', level: 'expert' },
+    { name: 'JavaScript', level: 'expert' },
+    { name: 'Java', level: 'expert' },
+    { name: 'Python', level: 'proficient' },
+    { name: 'C/C++', level: 'familiar' },
   ],
-  Frontend: ['React', 'Next.js', 'Web Components', 'Astro', 'CSS'],
-  Infrastructure: ['AWS', 'Docker', 'Kubernetes', 'OpenShift', 'Terraform'],
-  'AI / ML': ['LLM Agents', 'MCP', 'AWS Bedrock', 'Google Dialogflow', 'RAG'],
-  Process: ['SAFe', 'Scrum', 'Spec-Driven Dev', 'TOGAF'],
+  Architecture: [
+    { name: 'Microservices', level: 'expert' },
+    { name: 'Event-Driven', level: 'expert' },
+    { name: 'GraphQL', level: 'expert' },
+    { name: 'REST', level: 'expert' },
+    { name: 'SOA', level: 'proficient' },
+    { name: 'CQRS', level: 'proficient' },
+  ],
+  Frontend: [
+    { name: 'React', level: 'expert' },
+    { name: 'Next.js', level: 'expert' },
+    { name: 'CSS', level: 'expert' },
+    { name: 'Web Components', level: 'proficient' },
+    { name: 'Astro', level: 'proficient' },
+  ],
+  Infrastructure: [
+    { name: 'AWS', level: 'expert' },
+    { name: 'Docker', level: 'expert' },
+    { name: 'Kubernetes', level: 'expert' },
+    { name: 'OpenShift', level: 'proficient' },
+    { name: 'Terraform', level: 'proficient' },
+  ],
+  'AI / ML': [
+    { name: 'LLM Agents', level: 'expert' },
+    { name: 'MCP', level: 'expert' },
+    { name: 'AWS Bedrock', level: 'expert' },
+    { name: 'Google Dialogflow', level: 'proficient' },
+    { name: 'RAG', level: 'proficient' },
+  ],
+  Process: [
+    { name: 'Spec-Driven Dev', level: 'expert' },
+    { name: 'SAFe', level: 'expert' },
+    { name: 'Scrum', level: 'expert' },
+    { name: 'TOGAF', level: 'proficient' },
+  ],
 };
 
 export const projects: Project[] = [

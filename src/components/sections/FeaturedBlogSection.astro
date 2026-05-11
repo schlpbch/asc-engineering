@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import Card from '@asc-engineering/design-system/components/Card.astro';
+import Badge from '@asc-engineering/design-system/components/Badge.astro';
+import Stack from '@asc-engineering/design-system/components/Stack.astro';
+import PageSection from '../layout/PageSection.astro';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 2);
+---
+
+<PageSection id="featured-blog" title="Latest Articles" border>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    {
+      sortedPosts.map((post) => (
+        <a href={`/blog/${post.slug}`}>
+          <Card variant="interactive" size="md" className="h-full">
+            <Stack direction="vertical" size="md">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="font-semibold text-slate-900 dark:text-white">
+                    {post.data.title}
+                  </h3>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">
+                  {new Date(post.data.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </p>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  {post.data.description}
+                </p>
+              </div>
+              {post.data.tags && (
+                <Stack direction="horizontal" size="xs" wrap>
+                  {post.data.tags.map((tag: string) => (
+                    <Badge
+                      intent="secondary"
+                      variant="outline"
+                      size="xs"
+                      shape="pill"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </Stack>
+              )}
+            </Stack>
+          </Card>
+        </a>
+      ))
+    }
+  </div>
+  <div class="mt-8 text-center">
+    <a
+      href="/blog"
+      class="text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 transition-colors font-medium"
+    >
+      Read all articles &rarr;
+    </a>
+  </div>
+</PageSection>

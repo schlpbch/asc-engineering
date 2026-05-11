@@ -14,8 +14,10 @@ const { id, title, subtitle, border = false, padding = 'py-16' } = Astro.props;
 
 <section
   id={id}
+  data-animate
   class:list={[
     padding,
+    'opacity-0 transition-opacity duration-500',
     border && 'border-b border-slate-100 dark:border-slate-800',
   ]}
 >
