@@ -102,7 +102,7 @@ export const projects: Project[] = [
     description:
       'Ecosystem of 10+ domain-expert AI agents (trip planning, booking, weather, events) coordinated via MCP protocols with 1,000+ tool dependencies.',
     tech: ['MCP', 'TypeScript', 'AWS Bedrock', 'LLM Agents'],
-    href: 'https://modelcontextprotocol.io/',
+    href: 'https://github.com/schlpbch/aareguru-mcp',
   },
   {
     name: 'khtml / WebKit Contributions',

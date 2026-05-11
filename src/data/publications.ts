@@ -19,12 +19,12 @@ export const publications = {
   ],
   inReview: [
     {
-      text: 'A. Schlapbach: The Convergence of SGD and MCP: A New Paradigm for Agentic Interoperability. arXiv preprint arXiv:2602.18764, 2026.',
-      href: 'https://arxiv.org/abs/2602.18764',
+      text: 'A. Schlapbach: Formal Semantics for Agentic Tool Protocols: A Process Calculus Approach. arXiv preprint arXiv:2603.24747, 2026. Submitted to CONCUR 2026.',
+      href: 'https://arxiv.org/abs/2603.24747',
     },
     {
-      text: 'A. Schlapbach: Formal Semantics for Agentic Tool Protocols: A Process Calculus Approach. arXiv preprint arXiv:2603.24747, 2026.',
-      href: 'https://arxiv.org/abs/2603.24747',
+      text: 'A. Schlapbach: The Convergence of SGD and MCP: A New Paradigm for Agentic Interoperability. arXiv preprint arXiv:2602.18764, 2026. Under review.',
+      href: 'https://arxiv.org/abs/2602.18764',
     },
   ],
   booksAndJournals: [
@@ -82,7 +82,7 @@ export const publications = {
       href: '/papers/gender-handedness-igs-2007.pdf',
     },
     {
-      text: 'M. Liwicki, A. Schlapbach, H. Bunke, et al.: Writer Identification for Smart Meeting Room Systems. Proc. 7th IAPR Workshop on Document Analysis Systems, pp. 186–195, 2006.',
+      text: 'M. Liwicki, A. Schlapbach, H. Bunke, S. Bengio, J. Mariéthoz, and J. Richiardi: Writer Identification for Smart Meeting Room Systems. Proc. 7th IAPR Workshop on Document Analysis Systems (DAS 2006), pp. 186–195, 2006.',
       href: '/papers/wi-smart-meeting-das-2006.pdf',
     },
     {

@@ -9,6 +9,15 @@ export interface Contribution {
 
 export const contributions: Contribution[] = [
   {
+    name: 'aareguru-mcp',
+    role: 'Author & Maintainer',
+    period: '2025–present',
+    url: 'https://github.com/schlpbch/aareguru-mcp',
+    tags: ['MCP', 'TypeScript', 'FastMCP', 'Prometheus', 'Open Source'],
+    description:
+      'Production-grade MCP server exposing live river conditions, temperature, flow rates, and forecasts for Swiss rivers via the aareguru.ch API. 12 FastMCP tool implementations, 365 automated tests, Prometheus metrics endpoint, and 10+ releases. The most complete public example of an operationally-hardened MCP server.',
+  },
+  {
     name: 'Open Sales and Distribution Model (OSDM)',
     role: 'Technical Lead & Product Owner',
     period: '2018–present',
@@ -42,6 +51,6 @@ export const contributions: Contribution[] = [
     url: 'https://modelcontextprotocol.io',
     tags: ['MCP', 'AI Agents', 'Standardization', 'Interoperability'],
     description:
-      'Contributing to the official MCP standardization working group, which governs the open protocol for connecting AI assistants to external tools, data sources, and services. Work focuses on interoperability, schema design, and enterprise adoption patterns.',
+      'Contributing to the official MCP standardization working group. Active in the transport WG (reviewing and proposing changes to the SSE and Streamable HTTP transport specs) and the governance WG (contributing to specification process and versioning policy). Also contributing to interoperability and schema design discussions for enterprise adoption patterns.',
   },
 ];
