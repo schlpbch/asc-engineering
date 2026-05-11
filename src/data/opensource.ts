@@ -30,7 +30,7 @@ export const contributions: Contribution[] = [
     name: 'Open Sales and Distribution Model (OSDM)',
     role: 'Technical Lead & Product Owner',
     period: '2018–present',
-    url: 'https://osdm.org',
+    url: 'https://osdm.io',
     tags: ['API Standard', 'OpenAPI', 'Rail', 'Interoperability'],
     description:
       'International open API standard for rail ticket distribution and fare calculation. Adopted by all major European railways (SBB, DB, SNCF, ÖBB, …) and leading global distribution systems. Defines the common data model and REST interfaces that enable cross-border booking across the European rail network.',
