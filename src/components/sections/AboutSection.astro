@@ -1,188 +1,164 @@
 ---
 import Card from '@asc-engineering/design-system/components/Card.astro';
 import Stack from '@asc-engineering/design-system/components/Stack.astro';
+import Badge from '@asc-engineering/design-system/components/Badge.astro';
 import PageSection from '../layout/PageSection.astro';
+
+const link = 'text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 transition-colors underline underline-offset-2';
 ---
 
 <PageSection title="About Me">
-  <Stack direction="vertical" size="md">
-    <Card variant="default" size="md">
-      <h3 class="font-semibold text-slate-900 dark:text-white">Background</h3>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-        I'm an AI/ML Initiative Lead and Enterprise Architect based in Muri bei
-        Bern, Switzerland. With over 25 years of experience building large-scale
-        distributed systems, I've worked at the intersection of software
-        architecture, distributed computing, machine learning, and—most
-        recently—agentic AI systems.
-      </p>
+  <Stack direction="vertical" size="lg">
+    {/* Intro Card */}
+    <Card variant="default">
+      <div class="flex flex-col gap-3">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+          AI/ML Initiative Lead & Enterprise Architect
+        </h2>
+        <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+          Based in Muri bei Bern, Switzerland. Over 25 years building large-scale
+          distributed systems at the intersection of software architecture, machine
+          learning, and agentic AI. Currently leading AI initiatives at
+          <a href="https://www.sbb.ch" target="_blank" rel="noopener noreferrer" class={link}>SBB</a>.
+        </p>
+      </div>
+    </Card>
 
-      <h3 class="font-semibold text-slate-900 dark:text-white pt-3">
-        Career Path
-      </h3>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-        My career has evolved across three distinct chapters:
-      </p>
-      <ul
-        class="list-disc list-inside text-slate-600 dark:text-slate-400 leading-relaxed text-sm"
-      >
-        <li class="pt-1">
-          <strong>Enterprise Architecture & AI Systems (2013–Present):</strong>
-          Led architecture for SBB's omni-channel distribution, next-generation web
-          presence (<a
-            href="https://www.sbb.ch"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-            >sbb.ch</a
-          >), and—most recently—agentic ecosystems using the <a
-            href="https://modelcontextprotocol.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-            >Model Context Protocol</a
-          >.
-        </li>
-        <li class="pt-1">
-          <strong>Machine Learning & Document Analysis (2004–2011):</strong> Applied
-          statistical learning (HMM, GMM, SVM) to handwriting recognition and writer
-          identification, contributing to pattern recognition and document image analysis.
-        </li>
-        <li class="pt-1">
-          <strong>Software Composition & Reengineering (2001–2003):</strong> Focused
-          on formal methods (<a
-            href="https://en.wikipedia.org/wiki/Pi-calculus"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-            >π-calculus</a
-          >), meta-modeling (MOF/XMI), and component-oriented programming at the
-          <a
-            href="https://www.unibe.ch/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-            >University of Bern</a
-          >. That foundation in process algebra directly informs the 2026 <a
-            href="https://arxiv.org/abs/2603.24747"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-            >process calculus paper on agentic tool protocols</a
-          > — a 20-year thread from bisimilarity proofs to formal verification of
-          MCP agent behaviour.
-        </li>
-      </ul>
+    {/* Career Highlights */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <Card variant="outlined">
+        <div class="flex flex-col gap-3">
+          <h3 class="font-bold text-slate-900 dark:text-white">AI & Agentic Systems</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Designing domain-expert agents coordinated via
+            <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer" class={link}>Model Context Protocol (MCP)</a>.
+            Exploring formal verification, schema-driven interoperability, and LLM tool scaling.
+          </p>
+          <span class="text-xs font-medium text-slate-500 dark:text-slate-400">2013–Present</span>
+        </div>
+      </Card>
 
-      <h3 class="font-semibold text-slate-900 dark:text-white pt-3">
-        Current Focus
-      </h3>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-        I lead AI/ML initiatives at <a
-          href="https://www.sbb.ch"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-          >SBB</a
-        >'s Passenger Division, designing ecosystems of domain-expert agents
-        coordinated via the <a
-          href="https://modelcontextprotocol.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-          >Model Context Protocol (MCP)</a
-        >. My recent work explores formal verification of agentic systems,
-        schema-driven interoperability, and scaling LLM-powered tools across
-        large organizations.
-      </p>
+      <Card variant="outlined">
+        <div class="flex flex-col gap-3">
+          <h3 class="font-bold text-slate-900 dark:text-white">Large-Scale Architecture</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Led architecture for SBB's omni-channel distribution and next-generation
+            <a href="https://www.sbb.ch" target="_blank" rel="noopener noreferrer" class={link}>sbb.ch</a>
+            platform. Enterprise AI system design.
+          </p>
+          <span class="text-xs font-medium text-slate-500 dark:text-slate-400">2013–Present</span>
+        </div>
+      </Card>
 
-      <h3 class="font-semibold text-slate-900 dark:text-white pt-3">
-        Education
-      </h3>
-      <ul
-        class="list-disc list-inside text-slate-600 dark:text-slate-400 leading-relaxed text-sm"
-      >
-        <li class="pt-1">
-          <strong>PhD in Computer Science</strong> — <a
-            href="https://www.unibe.ch/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-            >University of Bern</a
-          >, 2008. Dissertation: "Writer Identification and Verification."
-        </li>
-        <li class="pt-1">
-          <strong>Diplom (Master's)</strong> — <a
-            href="https://www.unibe.ch/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-            >University of Bern</a
-          >, 2002. Thesis: "Enabling White-Box Reuse in a Pure Composition
-          Language" (<a
-            href="https://scg.unibe.ch/research/piccola"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-            >JPiccola</a
-          >).
-        </li>
-        <li class="pt-1">
-          <strong>Bachelor's</strong> — <a
-            href="https://www.unibe.ch/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-            >University of Bern</a
-          >, 2001. Thesis: "Generic XMI Support for the MOOSE Reengineering
-          Environment."
-        </li>
-      </ul>
+      <Card variant="outlined">
+        <div class="flex flex-col gap-3">
+          <h3 class="font-bold text-slate-900 dark:text-white">Machine Learning</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Statistical learning (HMM, GMM, SVM) for handwriting recognition, writer
+            identification, and document image analysis.
+          </p>
+          <span class="text-xs font-medium text-slate-500 dark:text-slate-400">2004–2011</span>
+        </div>
+      </Card>
 
-      <h3 class="font-semibold text-slate-900 dark:text-white pt-3">
-        Open Source & Community
-      </h3>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-        I'm a long-standing contributor to open-source projects, including
-        contributions to the <a
-          href="https://kde.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-          >KDE HTML rendering engine (khtml)</a
-        > and <a
-          href="https://webkit.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-          >WebKit</a
-        > CSS parser. I'm also the Technical Lead and Product Owner of the <a
-          href="https://osdm.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-          >Open Sales and Distribution Model (OSDM)</a
-        >, an international API standard for rail ticket distribution, now
-        adopted by all major European railways and leading global distribution
-        systems.
-      </p>
+      <Card variant="outlined">
+        <div class="flex flex-col gap-3">
+          <h3 class="font-bold text-slate-900 dark:text-white">Formal Methods</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Process algebra (<a href="https://en.wikipedia.org/wiki/Pi-calculus" target="_blank" rel="noopener noreferrer" class={link}>π-calculus</a>),
+            meta-modeling (MOF/XMI), component-oriented programming. 20-year arc to agentic verification.
+          </p>
+          <span class="text-xs font-medium text-slate-500 dark:text-slate-400">2001–2003</span>
+        </div>
+      </Card>
+    </div>
 
-      <h3 class="font-semibold text-slate-900 dark:text-white pt-3">
-        Interests
-      </h3>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-        Outside work I'm drawn to questions at the boundary of formal
-        specification and running systems: when does a schema become a contract,
-        and when does a contract become a proof? I find the same question
-        animates Swiss typeface design, long-distance hiking routes, and the
-        bisimilarity conditions in the process calculus paper — which is either
-        a unifying insight or a professional hazard, possibly both. More on that
-        in
-        <a
-          href="/hobbies"
-          class="text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"
-          >Hobbies</a
-        >.
-      </p>
+    {/* Education */}
+    <Card variant="default">
+      <div class="flex flex-col gap-4">
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Education</h3>
+
+        <div class="flex flex-col gap-3">
+          <div class="border-l-2 border-accent-300 dark:border-accent-700 pl-4">
+            <h4 class="font-semibold text-slate-900 dark:text-white">PhD in Computer Science</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              <a href="https://www.unibe.ch/" target="_blank" rel="noopener noreferrer" class={link}>University of Bern</a>, 2008
+            </p>
+            <p class="text-sm text-slate-500 dark:text-slate-400 italic">Writer Identification and Verification</p>
+          </div>
+
+          <div class="border-l-2 border-accent-300 dark:border-accent-700 pl-4">
+            <h4 class="font-semibold text-slate-900 dark:text-white">Diplom (Master's)</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              <a href="https://www.unibe.ch/" target="_blank" rel="noopener noreferrer" class={link}>University of Bern</a>, 2002
+            </p>
+            <p class="text-sm text-slate-500 dark:text-slate-400 italic">
+              Enabling White-Box Reuse in a Pure Composition Language
+              (<a href="https://scg.unibe.ch/research/piccola" target="_blank" rel="noopener noreferrer" class={link}>JPiccola</a>)
+            </p>
+          </div>
+
+          <div class="border-l-2 border-accent-300 dark:border-accent-700 pl-4">
+            <h4 class="font-semibold text-slate-900 dark:text-white">Bachelor's</h4>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              <a href="https://www.unibe.ch/" target="_blank" rel="noopener noreferrer" class={link}>University of Bern</a>, 2001
+            </p>
+            <p class="text-sm text-slate-500 dark:text-slate-400 italic">
+              Generic XMI Support for the MOOSE Reengineering Environment
+            </p>
+          </div>
+        </div>
+      </div>
+    </Card>
+
+    {/* Open Source */}
+    <Card variant="default">
+      <div class="flex flex-col gap-3">
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Open Source & Standardization</h3>
+
+        <div class="space-y-3">
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+            Long-standing contributor to open-source projects including
+            <a href="https://kde.org/" target="_blank" rel="noopener noreferrer" class={link}>KDE KHTML</a>
+            and
+            <a href="https://webkit.org/" target="_blank" rel="noopener noreferrer" class={link}>WebKit</a>
+            CSS parser (2001–2005).
+          </p>
+
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+            Technical Lead & Product Owner of the
+            <a href="https://osdm.org/" target="_blank" rel="noopener noreferrer" class={link}>Open Sales and Distribution Model (OSDM)</a>
+            — an international REST API standard for rail ticket distribution. Adopted by all major European railways (SBB, DB, SNCF, ÖBB) and leading global distribution systems.
+          </p>
+
+          <div class="flex flex-wrap gap-2 pt-2">
+            <Badge intent="primary">KDE</Badge>
+            <Badge intent="primary">WebKit</Badge>
+            <Badge intent="primary">OSDM</Badge>
+            <Badge intent="primary">MCP</Badge>
+          </div>
+        </div>
+      </div>
+    </Card>
+
+    {/* Philosophy */}
+    <Card variant="default">
+      <div class="flex flex-col gap-3">
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Interests & Philosophy</h3>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+          I'm drawn to questions at the boundary of formal specification and running systems:
+          when does a schema become a contract, and when does a contract become a proof?
+        </p>
+        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+          I find the same question animates Swiss typeface design, long-distance hiking routes,
+          and the bisimilarity conditions in formal process calculus — which is either a
+          unifying insight or a professional hazard, possibly both.
+        </p>
+        <p class="text-sm">
+          More on that in
+          <a href="/hobbies" class={link}>Hobbies</a>.
+        </p>
+      </div>
     </Card>
   </Stack>
 </PageSection>
