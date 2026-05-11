@@ -9,6 +9,15 @@ export interface Contribution {
 
 export const contributions: Contribution[] = [
   {
+    name: 'ASC Engineering Design System',
+    role: 'Author & Maintainer',
+    period: '2025–present',
+    url: 'https://github.com/schlpbch/asc-engineering-design-system',
+    tags: ['Design System', 'Astro', 'Tailwind CSS', 'TypeScript', 'WCAG 2.1 AA'],
+    description:
+      'Comprehensive, accessible design system built for production with 29 reusable components (Button, Input, Card, Modal, Table, Tabs, and more). Full TypeScript support, WCAG 2.1 AA accessibility compliance, dark mode support, animation utilities with prefers-reduced-motion support, and complete Storybook integration. Includes design tokens, utility functions, and patterns for consistent UI development.',
+  },
+  {
     name: 'aareguru-mcp',
     role: 'Author & Maintainer',
     period: '2025–present',
