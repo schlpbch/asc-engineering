@@ -1,5 +1,5 @@
 ---
-import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import Stack from '@asc-engineering/design-system/components/Stack.astro';
 import type { Publication } from '../../../data/publications';
 
 interface Props {
@@ -14,7 +14,9 @@ const { items, linkLabel = 'PDF' } = Astro.props;
   {
     items.map((p) => (
       <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex gap-2">
-        <span class="text-accent-700 dark:text-accent-400 mt-0.5 shrink-0">›</span>
+        <span class="text-accent-700 dark:text-accent-400 mt-0.5 shrink-0">
+          ›
+        </span>
         <span>
           {p.text}
           {p.href && (

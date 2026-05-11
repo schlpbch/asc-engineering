@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@source "../../node_modules/@mcp-orchestrator/design-system/src";
+@import 'tailwindcss';
+@source "../../node_modules/@asc-engineering/design-system/src";
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -45,7 +45,9 @@
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 

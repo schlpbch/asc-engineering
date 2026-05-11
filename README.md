@@ -1,14 +1,18 @@
 # asc-engineering
 
-Personal website and resume for Dr. Andreas Schlapbach, built with Astro and the [MCP Orchestrator Design System](../mcp-orchestrator-design-system).
+Personal website and resume for Dr. Andreas Schlapbach, built with Astro and the
+[MCP Orchestrator Design System](../asc-engineering-design-system).
 
 **Live:** https://asc-engineering.netlify.app
 
 ## Stack
 
 - [Astro 6](https://astro.build/) — static site generator
-- [TailwindCSS v4](https://tailwindcss.com/) — utility-first CSS via `@tailwindcss/vite`
-- [@mcp-orchestrator/design-system](../mcp-orchestrator-design-system) — local component library (Card, Badge, Avatar, Stack, Header, Footer, Button, IconButton, Container)
+- [TailwindCSS v4](https://tailwindcss.com/) — utility-first CSS via
+  `@tailwindcss/vite`
+- [@asc-engineering/design-system](../asc-engineering-design-system) — local
+  component library (Card, Badge, Avatar, Stack, Header, Footer, Button,
+  IconButton, Container)
 
 ## Development
 
@@ -43,10 +47,12 @@ public/
 
 ## Design system integration
 
-The design system is linked as a local `file:` dependency. Tailwind v4 requires an explicit `@source` directive in `global.css` to scan the design system's component files (node_modules are excluded from automatic scanning by default):
+The design system is linked as a local `file:` dependency. Tailwind v4 requires
+an explicit `@source` directive in `global.css` to scan the design system's
+component files (node_modules are excluded from automatic scanning by default):
 
 ```css
-@source "../../node_modules/@mcp-orchestrator/design-system/src";
+@source "../../node_modules/@asc-engineering/design-system/src";
 ```
 
 Dark mode uses Tailwind's class strategy configured via:
@@ -55,4 +61,5 @@ Dark mode uses Tailwind's class strategy configured via:
 @variant dark (&:where(.dark, .dark *));
 ```
 
-The `dark` class is toggled on `<html>` by a script that reads from `localStorage` (with OS preference as fallback).
+The `dark` class is toggled on `<html>` by a script that reads from
+`localStorage` (with OS preference as fallback).

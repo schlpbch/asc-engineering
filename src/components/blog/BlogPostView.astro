@@ -1,8 +1,8 @@
 ---
-import Container from '@mcp-orchestrator/design-system/components/Container.astro';
-import Breadcrumb from '@mcp-orchestrator/design-system/components/Breadcrumb.astro';
-import Badge from '@mcp-orchestrator/design-system/components/Badge.astro';
-import Stack from '@mcp-orchestrator/design-system/components/Stack.astro';
+import Container from '@asc-engineering/design-system/components/Container.astro';
+import Breadcrumb from '@asc-engineering/design-system/components/Breadcrumb.astro';
+import Badge from '@asc-engineering/design-system/components/Badge.astro';
+import Stack from '@asc-engineering/design-system/components/Stack.astro';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -79,9 +79,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
         <slot />
       </div>
 
-      <div
-        class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800"
-      >
+      <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
         <a
           href="/blog"
           class="inline-flex items-center gap-2 text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors"

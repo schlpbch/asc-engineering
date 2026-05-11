@@ -1,8 +1,8 @@
 ---
-import Card from '@mcp-orchestrator/design-system/components/Card.astro';
-import Input from '@mcp-orchestrator/design-system/components/Input.astro';
-import Textarea from '@mcp-orchestrator/design-system/components/Textarea.astro';
-import Button from '@mcp-orchestrator/design-system/components/Button.astro';
+import Card from '@asc-engineering/design-system/components/Card.astro';
+import Input from '@asc-engineering/design-system/components/Input.astro';
+import Textarea from '@asc-engineering/design-system/components/Textarea.astro';
+import Button from '@asc-engineering/design-system/components/Button.astro';
 import PageSection from '../layout/PageSection.astro';
 ---
 
@@ -34,7 +34,13 @@ import PageSection from '../layout/PageSection.astro';
         >
           Name <span class="text-red-500">*</span>
         </label>
-        <Input id="name" type="text" name="name" placeholder="Your name" required />
+        <Input
+          id="name"
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+        />
       </div>
 
       <div class="space-y-2">
@@ -123,17 +129,26 @@ import PageSection from '../layout/PageSection.astro';
         statusDiv.innerHTML = '';
         if (response.ok) {
           statusDiv.appendChild(
-            makeAlert(true, "✓ Message sent successfully! I'll get back to you soon.")
+            makeAlert(
+              true,
+              "✓ Message sent successfully! I'll get back to you soon.",
+            ),
           );
           form.reset();
         } else {
           statusDiv.appendChild(
-            makeAlert(false, 'Something went wrong. Please try again or email directly.')
+            makeAlert(
+              false,
+              'Something went wrong. Please try again or email directly.',
+            ),
           );
         }
       } catch {
         statusDiv.appendChild(
-          makeAlert(false, 'Network error. Please check your connection and try again.')
+          makeAlert(
+            false,
+            'Network error. Please check your connection and try again.',
+          ),
         );
       }
     });

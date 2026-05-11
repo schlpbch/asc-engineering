@@ -1,5 +1,5 @@
 ---
-import Container from '@mcp-orchestrator/design-system/components/Container.astro';
+import Container from '@asc-engineering/design-system/components/Container.astro';
 
 interface Props {
   id?: string;
@@ -14,7 +14,10 @@ const { id, title, subtitle, border = false, padding = 'py-16' } = Astro.props;
 
 <section
   id={id}
-  class:list={[padding, border && 'border-b border-slate-100 dark:border-slate-800']}
+  class:list={[
+    padding,
+    border && 'border-b border-slate-100 dark:border-slate-800',
+  ]}
 >
   <Container maxWidth="4xl" size="sm">
     <h2
