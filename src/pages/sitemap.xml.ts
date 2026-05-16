@@ -1,12 +1,10 @@
 import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
 
 const routes = [
   '/',
   '/about',
   '/work',
   '/publications',
-  '/blog',
   '/speaking',
   '/contact',
   '/testimonials',
@@ -16,10 +14,7 @@ const routes = [
 ];
 
 export const GET: APIRoute = async () => {
-  const posts = await getCollection('blog');
-  const blogRoutes = posts.map((post) => `/blog/${post.id}`);
-
-  const allRoutes = [...routes, ...blogRoutes];
+  const allRoutes = routes;
   const baseUrl = 'https://asc.engineering';
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
