@@ -4,6 +4,7 @@ import Badge from '@asc-engineering/design-system/components/Badge.astro';
 import Stack from '@asc-engineering/design-system/components/Stack.astro';
 import PageSection from '../layout/PageSection.astro';
 import type { Contribution } from '../../data/opensource';
+import { techUrls } from '../../data/opensource';
 
 interface Props {
   contributions: Contribution[];
@@ -47,11 +48,25 @@ const { contributions } = Astro.props;
             {item.description}
           </p>
           <div class="mt-3 flex flex-wrap gap-1.5">
-            {item.tags.map((tag) => (
-              <Badge intent="secondary" variant="default" size="sm">
-                {tag}
-              </Badge>
-            ))}
+            {item.tags.map((tag) => {
+              const url = techUrls[tag];
+              return url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block hover:opacity-80 transition-opacity"
+                >
+                  <Badge intent="secondary" variant="default" size="sm">
+                    {tag}
+                  </Badge>
+                </a>
+              ) : (
+                <Badge intent="secondary" variant="default" size="sm">
+                  {tag}
+                </Badge>
+              );
+            })}
           </div>
         </Card>
       ))

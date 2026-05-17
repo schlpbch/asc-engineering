@@ -18,6 +18,25 @@ export interface Project {
   href: string;
 }
 
+// Mapping of technology tags to their official URLs or documentation
+export const techUrls: Record<string, string> = {
+  OpenAPI: 'https://www.openapis.org/',
+  REST: 'https://en.wikipedia.org/wiki/REST',
+  'Railway Standards': 'https://uic.org/',
+  'Open Source': 'https://opensource.org/',
+  MCP: 'https://modelcontextprotocol.io/',
+  TypeScript: 'https://www.typescriptlang.org/',
+  'AWS Bedrock': 'https://aws.amazon.com/bedrock/',
+  'LLM Agents': 'https://en.wikipedia.org/wiki/Intelligent_agent',
+  'C++': 'https://isocpp.org/',
+  'CSS Parser': 'https://www.w3.org/Style/CSS/',
+  KDE: 'https://kde.org/',
+  'Next.js': 'https://nextjs.org/',
+  React: 'https://react.dev/',
+  GraphQL: 'https://graphql.org/',
+  'AWS CloudFront': 'https://aws.amazon.com/cloudfront/',
+};
+
 export const experience: Role[] = [
   {
     title: 'AI/ML Initiative Lead, Passenger Division',

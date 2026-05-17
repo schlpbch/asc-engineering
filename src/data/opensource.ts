@@ -7,6 +7,30 @@ export interface Contribution {
   description: string;
 }
 
+// Mapping of technology tags to their official URLs or documentation
+export const techUrls: Record<string, string> = {
+  'Design System': 'https://en.wikipedia.org/wiki/Design_system',
+  Astro: 'https://astro.build/',
+  'Tailwind CSS': 'https://tailwindcss.com/',
+  TypeScript: 'https://www.typescriptlang.org/',
+  'WCAG 2.1 AA': 'https://www.w3.org/WAI/WCAG21/quickref/',
+  MCP: 'https://modelcontextprotocol.io/',
+  FastMCP: 'https://github.com/jlowin/fastmcp',
+  Prometheus: 'https://prometheus.io/',
+  'Open Source': 'https://opensource.org/',
+  'API Standard': 'https://en.wikipedia.org/wiki/API',
+  OpenAPI: 'https://www.openapis.org/',
+  Rail: 'https://uic.org/',
+  Interoperability: 'https://en.wikipedia.org/wiki/Interoperability',
+  'C++': 'https://isocpp.org/',
+  CSS: 'https://www.w3.org/Style/CSS/',
+  'Browser Engine': 'https://en.wikipedia.org/wiki/Browser_engine',
+  HTML: 'https://html.spec.whatwg.org/',
+  KDE: 'https://kde.org/',
+  'AI Agents': 'https://en.wikipedia.org/wiki/Intelligent_agent',
+  Standardization: 'https://www.iso.org/',
+};
+
 export const contributions: Contribution[] = [
   {
     name: 'ASC Engineering Design System',
