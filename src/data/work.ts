@@ -20,6 +20,7 @@ export interface Project {
 
 // Mapping of technology tags to their official URLs or documentation
 export const techUrls: Record<string, string> = {
+  // Project tags
   OpenAPI: 'https://www.openapis.org/',
   REST: 'https://en.wikipedia.org/wiki/REST',
   'Railway Standards': 'https://uic.org/',
@@ -35,6 +36,29 @@ export const techUrls: Record<string, string> = {
   React: 'https://react.dev/',
   GraphQL: 'https://graphql.org/',
   'AWS CloudFront': 'https://aws.amazon.com/cloudfront/',
+  // Skills
+  JavaScript: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  Java: 'https://www.oracle.com/java/',
+  Python: 'https://www.python.org/',
+  'C/C++': 'https://isocpp.org/',
+  Microservices: 'https://microservices.io/',
+  'Event-Driven': 'https://en.wikipedia.org/wiki/Event-driven_architecture',
+  SOA: 'https://en.wikipedia.org/wiki/Service-oriented_architecture',
+  CQRS: 'https://martinfowler.com/bliki/CQRS.html',
+  CSS: 'https://www.w3.org/Style/CSS/',
+  'Web Components': 'https://www.webcomponents.org/',
+  Astro: 'https://astro.build/',
+  AWS: 'https://aws.amazon.com/',
+  Docker: 'https://www.docker.com/',
+  Kubernetes: 'https://kubernetes.io/',
+  OpenShift: 'https://www.redhat.com/en/technologies/cloud-computing/openshift',
+  Terraform: 'https://www.terraform.io/',
+  'Google Dialogflow': 'https://cloud.google.com/dialogflow',
+  RAG: 'https://en.wikipedia.org/wiki/Retrieval-augmented_generation',
+  'Spec-Driven Dev': 'https://en.wikipedia.org/wiki/Specification_by_example',
+  SAFe: 'https://scaledagileframework.com/',
+  Scrum: 'https://www.scrum.org/',
+  TOGAF: 'https://www.opengroup.org/togaf',
 };
 
 export const experience: Role[] = [
