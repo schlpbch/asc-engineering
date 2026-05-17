@@ -18,38 +18,46 @@ const levelColors: Record<string, 'primary' | 'secondary' | 'tertiary'> = {
 };
 ---
 
-<PageSection title="Skills" subtitle="Technical expertise across languages, architecture, and tools." border>
+<PageSection
+  title="Skills"
+  subtitle="Technical expertise across languages, architecture, and tools."
+  border
+>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    {Object.entries(skills).map(([category, categorySkills]) => (
-      <Card variant="filled" size="md">
-        <h3 class="font-semibold text-slate-900 dark:text-white mb-3">{category}</h3>
-        <div class="flex flex-wrap gap-1.5">
-          {categorySkills.map((skill) => {
-            const url = techUrls[skill.name];
-            const badge = (
-              <Badge
-                intent={levelColors[skill.level]}
-                variant="default"
-                size="sm"
-              >
-                {skill.name}
-              </Badge>
-            );
-            return url ? (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-block hover:opacity-80 transition-opacity"
-              >
-                {badge}
-              </a>
-            ) : (
-              badge
-            );
-          })}
-        </div>
-      </Card>
-    ))}
+    {
+      Object.entries(skills).map(([category, categorySkills]) => (
+        <Card variant="filled" size="md">
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-3">
+            {category}
+          </h3>
+          <div class="flex flex-wrap gap-1.5">
+            {categorySkills.map((skill) => {
+              const url = techUrls[skill.name];
+              const badge = (
+                <Badge
+                  intent={levelColors[skill.level]}
+                  variant="default"
+                  size="sm"
+                >
+                  {skill.name}
+                </Badge>
+              );
+              return url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block hover:opacity-80 transition-opacity"
+                >
+                  {badge}
+                </a>
+              ) : (
+                badge
+              );
+            })}
+          </div>
+        </Card>
+      ))
+    }
   </div>
 </PageSection>
