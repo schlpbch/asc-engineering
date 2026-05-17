@@ -11,10 +11,13 @@ interface Props {
 
 const { skills } = Astro.props;
 
-const levelColors: Record<string, 'primary' | 'secondary' | 'tertiary'> = {
+const levelColors: Record<
+  string,
+  'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info'
+> = {
   expert: 'primary',
   proficient: 'secondary',
-  familiar: 'tertiary',
+  familiar: 'info',
 };
 ---
 
