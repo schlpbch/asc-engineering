@@ -43,8 +43,10 @@ gh release create vX.Y.Z --title "vX.Y.Z" --notes "Formatted release notes"
   `tailwind.config.js`, all config in `src/styles/global.css`
 - **Design system:** `@asc-engineering/design-system` linked as
   `file:../asc-engineering-design-system`
-- **Single page:** everything lives in `src/pages/index.astro`; all resume data
-  is plain TypeScript arrays/objects at the top of that file
+- **Multi-page structure:** separate pages for work, publications, speaking,
+  open source, hobbies, about, and contact
+- **Data separation:** content stored in TypeScript files under `src/data/`
+  (work.ts, publications.ts, speaking.ts, opensource.ts)
 
 ## Strict mode
 
@@ -94,6 +96,27 @@ Google Fonts is loaded as async `<link>` tags in `BaseLayout.astro` (not via CSS
 `media="print" onload="this.media='all'"` with `<noscript>` fallback, plus
 `rel="preconnect"` hints for `fonts.googleapis.com` and `fonts.gstatic.com`.
 
+### Clickable projects and technology tags
+
+All project cards and technology tags are interactive and link to official
+documentation or relevant resources:
+
+- Projects link to their repositories, live sites, or official pages
+- Technology tags link to official docs (TypeScript → typescriptlang.org, React
+  → react.dev, etc.)
+- URL mappings are centralized in `techUrls` objects in `src/data/work.ts` and
+  `src/data/opensource.ts`
+- Tags without URLs fall back to non-clickable badges
+- Clicking a tag in a project card uses `event.stopPropagation()` to prevent
+  triggering the parent project link
+
+The following custom sections were created to support clickable elements:
+
+- `ProjectsSection.astro` — replaces `ProjectGrid` pattern
+- `FeaturedWorkSection.astro` — replaces `ProjectGrid` pattern with border
+- `SkillsSection.astro` — replaces `SkillsGrid` pattern
+- `OpenSourceSection.astro` — custom implementation with clickable tags
+
 ## Components used from design system
 
 | Component    | Usage                                                                                  |
@@ -110,8 +133,22 @@ Google Fonts is loaded as async `<link>` tags in `BaseLayout.astro` (not via CSS
 
 ## Updating resume content
 
-All content is in `src/pages/index.astro` — edit the three arrays near the top:
+All content is stored in separate TypeScript files under `src/data/`:
 
-- `experience` — work history entries
-- `skills` — object of `{ category: string[] }`
-- `projects` — project cards with name, description, tech, href
+- `work.ts` — experience, skills, projects, and tech URL mappings
+- `publications.ts` — academic publications
+- `speaking.ts` — conference talks and presentations
+- `opensource.ts` — open source contributions and tech URL mappings
+
+### Adding clickable links to new technologies
+
+When adding new technologies to projects or skills, add their URLs to the
+`techUrls` mapping in the relevant data file:
+
+```ts
+export const techUrls: Record<string, string> = {
+  TypeScript: 'https://www.typescriptlang.org/',
+  React: 'https://react.dev/',
+  // Add new entries here
+};
+```
