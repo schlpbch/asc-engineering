@@ -9,14 +9,14 @@
     height="630"
     fill="#fff" />
   <rect
-    x="80"
+    x="90"
     y="100"
     width="244"
     height="58"
     fill="#115e59"
     stroke-width="4" />
   <text
-    x="92"
+    x="102"
     y="136"
     font-family="IBM Plex Sans, -apple-system, sans-serif"
     font-size="30"
@@ -26,7 +26,7 @@
     asc.engineering
   </text>
   <text
-    x="80"
+    x="90"
     y="260"
     font-family="IBM Plex Sans, -apple-system, sans-serif"
     font-size="64"
@@ -37,7 +37,7 @@
     Andreas Schlapbach
   </text>
   <text
-    x="80"
+    x="90"
     y="350"
     font-family="IBM Plex Sans, -apple-system, sans-serif"
     font-size="36"
@@ -45,7 +45,7 @@
     AI/ML Initiative Lead &amp; Enterprise Architect
   </text>
   <text
-    x="80"
+    x="90"
     y="400"
     font-family="IBM Plex Sans, -apple-system, sans-serif"
     font-size="28"
@@ -53,23 +53,23 @@
     PhD in Machine Learning and Pattern Recognition
   </text>
   <text
-    x="80"
-    y="442"
+    x="90"
+    y="439"
     font-family="IBM Plex Sans, -apple-system, sans-serif"
     font-size="28"
     fill="#000">
-    18 Years of Experience Building Large-scale Distributed Systems for SBB
+    18 Years of Experience Building Large-Scale Distributed Systems for SBB
   </text>
   <text
-    x="80"
-    y="482"
+    x="90"
+    y="478"
     font-family="IBM Plex Sans, -apple-system, sans-serif"
     font-size="28"
     fill="#000">
     MCP · Agentic AI · Formal Methods · Enterprise Architecture
   </text>
   <circle
-    cx="1190"
+    cx="1198"
     cy="12"
     r="160"
     fill="#0f776e"
