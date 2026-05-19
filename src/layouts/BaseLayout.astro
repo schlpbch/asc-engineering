@@ -25,8 +25,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
@@ -265,36 +264,40 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     </Footer>
 
     {/* Floating contact CTA */}
-    {Astro.url.pathname !== '/contact' && (
-      <div
-        id="floating-contact-cta"
-        class="fixed bottom-6 right-6 opacity-0 invisible transition-all duration-300 z-40"
-      >
-        <a
-          href="/contact"
-          class="flex items-center gap-2 px-4 py-3 rounded-lg bg-accent-600 dark:bg-accent-500 text-white hover:bg-accent-700 dark:hover:bg-accent-600 transition-colors shadow-lg hover:shadow-xl animate-fade-in"
-          title="Get in touch"
+    {
+      Astro.url.pathname !== '/contact' && (
+        <div
+          id="floating-contact-cta"
+          class="fixed bottom-6 right-6 opacity-0 invisible transition-all duration-300 z-40"
         >
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+          <a
+            href="/contact"
+            class="flex items-center gap-2 px-4 py-3 rounded-lg bg-accent-600 dark:bg-accent-500 text-white hover:bg-accent-700 dark:hover:bg-accent-600 transition-colors shadow-lg hover:shadow-xl animate-fade-in"
+            title="Get in touch"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            ></path>
-          </svg>
-          <span class="font-medium">Contact</span>
-        </a>
-      </div>
-    )}
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+            <span class="font-medium">Contact</span>
+          </a>
+        </div>
+      )
+    }
 
     <script>
-      {/* Dark mode toggle */}
+      {
+        /* Dark mode toggle */
+      }
       const themeBtn = document.getElementById('theme-toggle');
       const themeLabel = document.getElementById('theme-label');
 
@@ -313,7 +316,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
       updateThemeLabel();
 
-      {/* Floating contact CTA on scroll */}
+      {
+        /* Floating contact CTA on scroll */
+      }
       const floatingCta = document.getElementById('floating-contact-cta');
       if (floatingCta) {
         window.addEventListener('scroll', () => {
@@ -327,7 +332,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
         });
       }
 
-      {/* Scroll animations via IntersectionObserver */}
+      {
+        /* Scroll animations via IntersectionObserver */
+      }
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
