@@ -1,4 +1,5 @@
 export interface Publication {
+  author?: string;
   text: string;
   href?: string;
 }
@@ -6,13 +7,16 @@ export interface Publication {
 export const publications = {
   theses: [
     {
+      author: 'A. Schlapbach',
       text: 'A. Schlapbach: Writer Identification and Verification. PhD thesis, Universität Bern, 2008. Published as a book by IOS Press (DISKI series, ISBN: 978-1-58603-825-0).',
     },
     {
+      author: 'A. Schlapbach',
       text: 'A. Schlapbach: Enabling White-Box Reuse in a Pure Composition Language. Diplomarbeit, University of Bern, 2002.',
       href: '/papers/master-thesis-2002.pdf',
     },
     {
+      author: 'A. Schlapbach',
       text: 'A. Schlapbach: Generic XMI Support for the MOOSE Reengineering Environment. Bachelor thesis, University of Bern, 2001.',
       href: '/papers/bachelor-thesis-2001.pdf',
     },
@@ -25,6 +29,9 @@ export const publications = {
     {
       text: 'A. Schlapbach: The Convergence of SGD and MCP: A New Paradigm for Agentic Interoperability. arXiv preprint arXiv:2602.18764, 2026. Under review.',
       href: 'https://arxiv.org/abs/2602.18764',
+    },
+    {
+      text: 'A. Schlapbach: Co-linearity and Cluster Stability in Transport Economics: Evidence from Aviation and Rail, 2026. Submitted to Transportation Research Part B.',
     },
   ],
   booksAndJournals: [
