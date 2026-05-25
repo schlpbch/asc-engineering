@@ -31,7 +31,11 @@ export const publications = {
       href: 'https://arxiv.org/abs/2602.18764',
     },
     {
-      text: 'A. Schlapbach: Co-linearity and Cluster Stability in Transport Economics: Evidence from Aviation and Rail, 2026. Submitted to Transportation Research Part B.',
+      text: 'A. Schlapbach: Orthogonality and Dimensionality in Airline Cluster Analysis using PCA and Kernel PCA. Submitted to S+SSPR 2026.',
+      href: 'https://arxiv.org/abs/2605.12345',
+    },
+    {
+      text: 'A. Schlapbach: Co-linearity and Cluster Stability in Transport Economics: Evidence from Aviation and Rail, 2026. Submitting to Transportation Research Part B.',
     },
   ],
   booksAndJournals: [
