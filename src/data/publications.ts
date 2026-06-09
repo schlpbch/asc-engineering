@@ -23,16 +23,12 @@ export const publications = {
   ],
   inReview: [
     {
-      text: 'A. Schlapbach: Formal Semantics for Agentic Tool Protocols: A Process Calculus Approach. arXiv preprint arXiv:2603.24747, 2026. Submitted to CONCUR 2026.',
-      href: 'https://arxiv.org/abs/2603.24747',
-    },
-    {
       text: 'A. Schlapbach: The Convergence of SGD and MCP: A New Paradigm for Agentic Interoperability. arXiv preprint arXiv:2602.18764, 2026. Submitted to EMLNP 2026.',
       href: 'https://arxiv.org/abs/2602.18764',
     },
     {
       text: 'A. Schlapbach: Orthogonality and Dimensionality in Airline Cluster Analysis using PCA and Kernel PCA. Submitted to S+SSPR 2026.',
-      href: 'https://arxiv.org/submit/7635667',
+      href: 'https://arxiv.org/abs/2606.08322',
     },
     {
       text: 'A. Schlapbach: Co-linearity and Cluster Stability in Transport Economics: Evidence from Aviation and Rail, 2026. Submitting to Transportation Research Part B.',
