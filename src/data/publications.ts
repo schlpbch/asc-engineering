@@ -30,9 +30,7 @@ export const publications = {
       text: 'A. Schlapbach: Orthogonality and Dimensionality in Airline Cluster Analysis using PCA and Kernel PCA. Submitted to S+SSPR 2026.',
       href: 'https://arxiv.org/abs/2606.08322',
     },
-    {
-      text: 'A. Schlapbach: Co-linearity and Cluster Stability in Transport Economics: Evidence from Aviation and Rail, 2026. Submitting to Transportation Research Part B.',
-    },
+
   ],
   booksAndJournals: [
     {
@@ -64,6 +62,10 @@ export const publications = {
     },
   ],
   conferencesPapers: [
+    {
+      text: 'A. Schlapbach: Co-linearity and Cluster Stability in Transport Economics: Evidence from Aviation and Rail, 2026. Submitting to Transportation Research Part B.',
+      href: 'https://arxiv.org/abs/2606.08322',
+    },
     {
       text: 'A. Schlapbach, F. Wettstein, and H. Bunke: Automatic Estimation of the Readability of Handwritten Text. Proc. 16th European Signal Processing Conference, pp. 1–5, 2008.',
       href: '/papers/readability-eusipco-2008.pdf',
