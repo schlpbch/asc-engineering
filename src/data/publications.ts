@@ -26,11 +26,11 @@ export const publications = {
       text: 'A. Schlapbach: The Convergence of SGD and MCP: A New Paradigm for Agentic Interoperability. arXiv preprint arXiv:2602.18764, 2026. Submitted to EMLNP 2026.',
       href: 'https://arxiv.org/abs/2602.18764',
     },
+
     {
-      text: 'A. Schlapbach: Orthogonality and Dimensionality in Airline Cluster Analysis using PCA and Kernel PCA. Submitted to S+SSPR 2026.',
+      text: 'A. Schlapbach: Co-linearity and Cluster Stability in Transport Economics: Evidence from Aviation and Rail, 2026. Submitting to Transportation Research Part B.',
       href: 'https://arxiv.org/abs/2606.08322',
     },
-
   ],
   booksAndJournals: [
     {
@@ -63,7 +63,7 @@ export const publications = {
   ],
   conferencesPapers: [
     {
-      text: 'A. Schlapbach: Co-linearity and Cluster Stability in Transport Economics: Evidence from Aviation and Rail, 2026. Submitting to Transportation Research Part B.',
+      text: 'A. Schlapbach: Orthogonality and Dimensionality in Airline Cluster Analysis using PCA and Kernel PCA. S+SSPR 2026.',
       href: 'https://arxiv.org/abs/2606.08322',
     },
     {
