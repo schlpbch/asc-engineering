@@ -10,10 +10,10 @@ import PageSection from '../layout/PageSection.astro';
   <Card variant="default" size="md">
     <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
       I'm interested in conversations or research about Agentic Systems, Machine
-      Learning, Type Systems, or Formal Methods.
+      Learning, Pattern Recognition, Type Systems, or Formal Methods.
     </p>
     <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-      Feel free to reach out with questions or collaboration ideas.
+      Feel free to reach out with questions or ideas.
     </p>
 
     <div id="form-status"></div>
@@ -95,70 +95,79 @@ import PageSection from '../layout/PageSection.astro';
       <Button type="submit" intent="primary" fullWidth>Send Message</Button>
     </form>
   </Card>
-</PageSection>
+  <p class="text-slate-600 dark:text-slate-400 mt-4 text-sm">
+    Alternatively, you can book a time to chat with me directly via
+    <a
+      href="https://calendly.com/asc-engineering"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-blue-600 dark:text-blue-400 underline">Calendly</a
+    >.
+  </p>
 
-<script>
-  const form = document.querySelector('form');
-  const statusDiv = document.getElementById('form-status');
+  <script>
+    const form = document.querySelector('form');
+    const statusDiv = document.getElementById('form-status');
 
-  if (form && statusDiv) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
+    if (form && statusDiv) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
 
-      const makeAlert = (ok: boolean, message: string) => {
-        const div = document.createElement('div');
-        const [bgClass, borderClass, textClass] = ok
-          ? [
-              'bg-green-50 dark:bg-green-950/30',
-              'border-green-200 dark:border-green-800',
-              'text-green-800 dark:text-green-300',
-            ]
-          : [
-              'bg-red-50 dark:bg-red-950/30',
-              'border-red-200 dark:border-red-800',
-              'text-red-800 dark:text-red-300',
-            ];
-        div.className = `mb-6 p-4 border rounded-lg ${bgClass} ${borderClass}`;
-        const p = document.createElement('p');
-        p.className = `text-sm font-medium ${textClass}`;
-        p.textContent = message;
-        div.appendChild(p);
-        return div;
-      };
+        const makeAlert = (ok: boolean, message: string) => {
+          const div = document.createElement('div');
+          const [bgClass, borderClass, textClass] = ok
+            ? [
+                'bg-green-50 dark:bg-green-950/30',
+                'border-green-200 dark:border-green-800',
+                'text-green-800 dark:text-green-300',
+              ]
+            : [
+                'bg-red-50 dark:bg-red-950/30',
+                'border-red-200 dark:border-red-800',
+                'text-red-800 dark:text-red-300',
+              ];
+          div.className = `mb-6 p-4 border rounded-lg ${bgClass} ${borderClass}`;
+          const p = document.createElement('p');
+          p.className = `text-sm font-medium ${textClass}`;
+          p.textContent = message;
+          div.appendChild(p);
+          return div;
+        };
 
-      try {
-        const response = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData as any).toString(),
-        });
+        try {
+          const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData as any).toString(),
+          });
 
-        statusDiv.innerHTML = '';
-        if (response.ok) {
-          statusDiv.appendChild(
-            makeAlert(
-              true,
-              "✓ Message sent successfully! I'll get back to you soon.",
-            ),
-          );
-          form.reset();
-        } else {
+          statusDiv.innerHTML = '';
+          if (response.ok) {
+            statusDiv.appendChild(
+              makeAlert(
+                true,
+                "✓ Message sent successfully! I'll get back to you soon.",
+              ),
+            );
+            form.reset();
+          } else {
+            statusDiv.appendChild(
+              makeAlert(
+                false,
+                'Something went wrong. Please try again or email directly.',
+              ),
+            );
+          }
+        } catch {
           statusDiv.appendChild(
             makeAlert(
               false,
-              'Something went wrong. Please try again or email directly.',
+              'Network error. Please check your connection and try again.',
             ),
           );
         }
-      } catch {
-        statusDiv.appendChild(
-          makeAlert(
-            false,
-            'Network error. Please check your connection and try again.',
-          ),
-        );
-      }
-    });
-  }
-</script>
+      });
+    }
+  </script>
+</PageSection>
