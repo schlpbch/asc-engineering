@@ -4,26 +4,28 @@ import Badge from '@asc-engineering/design-system/components/Badge.astro';
 import Stack from '@asc-engineering/design-system/components/Stack.astro';
 import PageSection from '../layout/PageSection.astro';
 import PublicationList from './PublicationList.astro';
-import type { Publication } from '../data/publications';
+import type { PublicationDict } from '../../data/publications';
+import { ReviewState } from '../../data/publications';
 
 interface Props {
-  publications: {
-    inReview: Publication[];
-    booksAndJournals: Publication[];
-    conferencesPapers: Publication[];
-    presentations: Publication[];
-    theses: Publication[];
-  };
+  publications: PublicationDict;
 }
 
 const { publications: pubs } = Astro.props;
+
+const inReview = pubs.conferencePapers.filter(
+  (p) => p.reviewState === ReviewState.SUBMITTED || p.reviewState === ReviewState.ACCEPTED
+);
+const publishedConferencePapers = pubs.conferencePapers.filter(
+  (p) => p.reviewState === ReviewState.PUBLISHED
+);
 
 const groups = [
   {
     title: 'In Review',
     intent: 'warning' as const,
-    badge: 'Under Review',
-    items: pubs.inReview,
+    badge: `${inReview.length} papers`,
+    items: inReview,
     linkLabel: 'arXiv',
   },
   {
@@ -36,8 +38,8 @@ const groups = [
   {
     title: 'Conference Papers',
     intent: 'info' as const,
-    badge: `${pubs.conferencesPapers.length} papers`,
-    items: pubs.conferencesPapers,
+    badge: `${publishedConferencePapers.length} papers`,
+    items: publishedConferencePapers,
     linkLabel: 'PDF',
   },
   {

@@ -4,9 +4,14 @@ import portraitImg from '../../assets/portrait.jpg';
 import Container from '@asc-engineering/design-system/components/Container.astro';
 import Stack from '@asc-engineering/design-system/components/Stack.astro';
 import Badge from '@asc-engineering/design-system/components/Badge.astro';
+import { publications, ReviewState } from '../../data/publications';
 
 const lc =
   'text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors';
+
+const recentResearch = publications.conferencePapers
+  .filter((p) => p.reviewState === ReviewState.SUBMITTED || p.reviewState === ReviewState.ACCEPTED)
+  .slice(0, 3);
 ---
 
 <section class="py-20 border-b border-slate-100 dark:border-slate-800">
@@ -118,78 +123,35 @@ const lc =
                 </p>
                 <div>
                   <ul class="space-y-1">
-                    <li class="text-sm text-slate-400 dark:text-slate-500">
-                      <a
-                        href="https://github.com/schlpbch/publications/blob/main/conference-papers/express-sos-2026.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class={lc}
-                        >Formal Semantics for Agentic Tool Protocols: A Process
-                        Calculus Approach</a
-                      >
-                      <span class="text-slate-400 dark:text-slate-500">
-                        — Submitted to <a
-                          href="https://expresssos.github.io/"
-                          target="_blank"
-                          rel="noopener norefferrer"
-                          class={lc}>EXPRESS/SOS 2026</a
-                        >
-                      </span>
-                    </li>
-                    <li class="text-sm text-slate-600 dark:text-slate-400">
-                      <a
-                        href="https://arxiv.org/abs/2606.08322"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class={lc}
-                        >Orthogonality and Dimensionality in Airline Cluster
-                        Analysis using PCA and Kernel PCA</a
-                      >
-                      <span class="text-slate-400 dark:text-slate-500">
-                        — arXiv:2605.7635667, accepted for presentation at <a
-                          href="https://ssspr2026.inf.unibe.ch/"
+                    {recentResearch.map((pub) => (
+                      <li class="text-sm text-slate-600 dark:text-slate-400">
+                        <a
+                          href={pub.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          class={lc}>S+SSPR 2026</a
+                          class={lc}
                         >
-                      </span>
-                    </li>
-                    <li class="text-sm text-slate-600 dark:text-slate-400">
-                      <a
-                        href="https://arxiv.org/abs/2605.67890"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class={lc}
-                        >Co-linearity and Cluster Stability in Transport
-                        Economics: Evidence from Aviation and Rail</a
-                      >
-                      <span class="text-slate-400 dark:text-slate-500">
-                        — submitting to <a
-                          href="https://www.journals.elsevier.com/transportation-research-part-b-methodological"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class={lc}>Transportation Research Part B</a
-                        >
-                      </span>
-                    </li>
-                    <li class="text-sm text-slate-600 dark:text-slate-400">
-                      <a
-                        href="https://arxiv.org/abs/2602.18764"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class={lc}
-                        >The Convergence of SGD and MCP: A New Paradigm for
-                        Agentic Interoperability</a
-                      >
-                      <span class="text-slate-400 dark:text-slate-500">
-                        — arXiv:2602.18764, submitted to <a
-                          href="https://2026.emnlp.org"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class={lc}>EMNLP 2026</a
-                        >
-                      </span>
-                    </li>
+                          {pub.title}
+                        </a>
+                        {pub.venue && (
+                          <span class="text-slate-400 dark:text-slate-500">
+                            {' — '}
+                            {pub.venueHref ? (
+                              <a
+                                href={pub.venueHref}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class={lc}
+                              >
+                                {pub.venue}
+                              </a>
+                            ) : (
+                              pub.venue
+                            )}
+                          </span>
+                        )}
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div class="mt-4 flex flex-col gap-3">
