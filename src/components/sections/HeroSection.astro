@@ -11,8 +11,8 @@ const lc =
 
 <section class="py-20 border-b border-slate-100 dark:border-slate-800">
   <Container maxWidth="4xl" size="sm">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 items-start">
-      <div class="sm:col-span-2 animate-fade-in">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
+      <div class="animate-fade-in">
         <div
           class="rounded-lg bg-gradient-to-br from-accent-50/40 to-transparent dark:from-accent-950/20 dark:to-transparent p-6 -mx-2"
         >
@@ -274,22 +274,22 @@ const lc =
             </div>
           </Stack>
         </div>
-        <div class="sticky" style="top: 15rem;">
-          <div
-            class="rounded-xs overflow-hidden shadow-lg border-4 border-accent-700 dark:border-accent-400"
-          >
-            <Image
-              src={portraitImg}
-              alt="Andreas Schlapbach"
-              width={760}
-              height={949}
-              widths={[380, 760]}
-              sizes="(min-width: 640px) 280px, 380px"
-              class="w-full h-auto object-cover"
-              loading="eager"
-              fetchpriority="high"
-            />
-          </div>
+      </div>
+      <div class="sticky" style="top: 15rem;">
+        <div
+          class="rounded-xs overflow-hidden shadow-lg border-4 border-accent-700 dark:border-accent-400"
+        >
+          <Image
+            src={portraitImg}
+            alt="Andreas Schlapbach"
+            width={760}
+            height={949}
+            widths={[380, 760]}
+            sizes="(min-width: 640px) 280px, 380px"
+            class="w-full h-auto object-cover"
+            loading="eager"
+            fetchpriority="high"
+          />
         </div>
       </div>
     </div>
