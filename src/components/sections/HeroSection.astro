@@ -4,13 +4,14 @@ import portraitImg from '../../assets/portrait.jpg';
 import Container from '@asc-engineering/design-system/components/Container.astro';
 import Stack from '@asc-engineering/design-system/components/Stack.astro';
 import Badge from '@asc-engineering/design-system/components/Badge.astro';
+import RecentWorkList from './publications/PublicationList.astro';
 import { publications, ReviewState } from '../../data/publications';
 
 const lc =
   'text-accent-700 dark:text-accent-400 hover:text-accent-600 dark:hover:text-accent-300 transition-colors';
 
-const recentResearch = publications.conferencePapers
-  .filter((p) => p.reviewState === ReviewState.SUBMITTED || p.reviewState === ReviewState.ACCEPTED)
+const recentWork = publications.conferencePapers
+  .filter((p) => p.reviewState === ReviewState.SUBMITTED)
   .slice(0, 3);
 ---
 
@@ -76,9 +77,11 @@ const recentResearch = publications.conferencePapers
                 contributor to <a
                   href="https://modelcontextprotocol.io/"
                   class={lc}>MCP</a
-                >
-                working groups (transport wg, governance wg, and others). Former
-                <a href="https://kde.org/" class={lc}>KDE</a> and
+                >{' '}
+                working groups (transport wg, governance wg, and others). Former {
+                  ' '
+                }
+                <a href="https://kde.org/" class={lc}>KDE</a> and {' '}
                 <a href="https://webkit.org/" class={lc}>WebKit</a> core developer.
               </p>
               <p
@@ -93,7 +96,7 @@ const recentResearch = publications.conferencePapers
                   class={lc}>University of Berne</a
                 >. More than
                 <a href="./publications" class={lc}>20 publications</a> in peer-reviewed
-                journals and conferences, including
+                journals and conferences, including {' '}
                 <a
                   href="https://en.wikipedia.org/wiki/ICPR"
                   target="_blank"
@@ -121,39 +124,7 @@ const recentResearch = publications.conferencePapers
                 >
                   Recent Research
                 </p>
-                <div>
-                  <ul class="space-y-1">
-                    {recentResearch.map((pub) => (
-                      <li class="text-sm text-slate-600 dark:text-slate-400">
-                        <a
-                          href={pub.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class={lc}
-                        >
-                          {pub.title}
-                        </a>
-                        {pub.venue && (
-                          <span class="text-slate-400 dark:text-slate-500">
-                            {' — '}
-                            {pub.venueHref ? (
-                              <a
-                                href={pub.venueHref}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class={lc}
-                              >
-                                {pub.venue}
-                              </a>
-                            ) : (
-                              pub.venue
-                            )}
-                          </span>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <RecentWorkList items={recentWork} linkColorClass={lc} />
                 <div class="mt-4 flex flex-col gap-3">
                   <span
                     class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400"
