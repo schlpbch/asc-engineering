@@ -147,8 +147,8 @@ export const publications: PublicationDict = {
       authors: 'A. Schlapbach',
       title:
         'Orthogonality and Dimensionality in Airline Cluster Analysis using PCA and Kernel PCA',
-      href: 'https://arxiv.org/abs/2606.08322',
-      reviewState: ReviewState.ACCEPTED,
+      href: 'http://arxiv.org/abs/2606.08322',
+      reviewState: ReviewState.PUBLISHED,
       venue: 'S+SSPR 2026',
       venueHref: 'https://ssspr2026.inf.unibe.ch/',
       year: 2026,
