@@ -33,7 +33,23 @@ export const techUrls: Record<string, string> = {
 
 export const contributions: Contribution[] = [
   {
-    name: 'ASC Engineering Design System',
+    name: 'LLMbdaJS – A TypeScript reference implementation of the LLMbda Calculus',
+    role: 'Author & Maintainer',
+    period: '2025–present',
+    url: 'https://github.com/schlpbch/LLMbdaJS',
+    tags: [
+      'LLMbda Calculus',
+      'Lambda Calculus',
+      'Virtual Machine',
+      'Agentic Systems',
+      'Interpreter',
+      'TypeScript',
+    ],
+    description:
+      'A TypeScript reference implementation of the LLMbda calculus by Zachary Garby, Andrew D Gordon, and David Sands. Presented in the paper **The LLMbda Calculus: AI Agents, Conversations, and Information Flow**. The LLMbda calculus is an untyped call-by-value lambda calculus that makes provenance-based defense both expressible and provably sound. This is an executable interpreter for the calculus operational semantics: labeled lambda calculus + first class conversation primitives + dynamic information-flow labels.',
+  },
+  {
+    name: 'asc engineering Design System',
     role: 'Author & Maintainer',
     period: '2025–present',
     url: 'https://github.com/schlpbch/asc-engineering-design-system',
@@ -45,7 +61,7 @@ export const contributions: Contribution[] = [
       'WCAG 2.1 AA',
     ],
     description:
-      'Comprehensive, accessible design system built for production with 29 reusable components (Button, Input, Card, Modal, Table, Tabs, and more). Full TypeScript support, WCAG 2.1 AA accessibility compliance, dark mode support, animation utilities with prefers-reduced-motion support, and complete Storybook integration. Includes design tokens, utility functions, and patterns for consistent UI development.',
+      'Comprehensive, accessible design system built for production with reusable components (Button, Input, Card, Modal, Table, Tabs, and more). Full TypeScript support, WCAG 2.1 AA accessibility compliance, dark mode support, animation utilities with prefers-reduced-motion support, and complete Storybook integration. Includes design tokens, utility functions, and patterns for consistent UI development.',
   },
   {
     name: 'aareguru-mcp',
@@ -55,6 +71,15 @@ export const contributions: Contribution[] = [
     tags: ['MCP', 'TypeScript', 'FastMCP', 'Prometheus', 'Open Source'],
     description:
       'Production-grade MCP server exposing live river conditions, temperature, flow rates, and forecasts for Swiss rivers via the aareguru.ch API. 12 FastMCP tool implementations, 365 automated tests, Prometheus metrics endpoint, and 10+ releases. The most complete public example of an operationally-hardened MCP server.',
+  },
+  {
+    name: 'Model Context Protocol (MCP) — Standardization Working Group',
+    role: 'Contributor',
+    period: '2025–present',
+    url: 'https://modelcontextprotocol.io',
+    tags: ['MCP', 'AI Agents', 'Standardization', 'Interoperability'],
+    description:
+      'Contributing to the official MCP standardization working group. Active in the transport WG (reviewing and proposing changes to the SSE and Streamable HTTP transport specs) and the governance WG (contributing to specification process and versioning policy). Also contributing to interoperability and schema design discussions for enterprise adoption patterns.',
   },
   {
     name: 'Open Sales and Distribution Model (OSDM)',
@@ -70,7 +95,7 @@ export const contributions: Contribution[] = [
     role: 'Contributor',
     period: '2002–2005',
     url: 'https://webkit.org',
-    tags: ['C++', 'CSS', 'Browser Engine'],
+    tags: ['C++', 'CSS', 'Webkit', 'Browser Engine'],
     description:
       "Contributed fixes and improvements to the CSS parser in WebKit (formerly KHTML). Work focused on standards-compliance for CSS selectors and property parsing, some of which flowed upstream into Apple's Safari browser.",
   },
@@ -79,17 +104,8 @@ export const contributions: Contribution[] = [
     role: 'Contributor',
     period: '2001–2004',
     url: 'https://kde.org',
-    tags: ['C++', 'HTML', 'CSS', 'KDE'],
+    tags: ['C++', 'HTML', 'CSS', 'KDE', 'Webkit', 'Browser Engine'],
     description:
       "Contributed to the KHTML HTML/CSS rendering engine that shipped in KDE's Konqueror browser and later became the foundation for WebKit and Blink. Patches addressed CSS rendering correctness and layout edge cases.",
-  },
-  {
-    name: 'Model Context Protocol (MCP) — Standardization Working Group',
-    role: 'Contributor',
-    period: '2025–present',
-    url: 'https://modelcontextprotocol.io',
-    tags: ['MCP', 'AI Agents', 'Standardization', 'Interoperability'],
-    description:
-      'Contributing to the official MCP standardization working group. Active in the transport WG (reviewing and proposing changes to the SSE and Streamable HTTP transport specs) and the governance WG (contributing to specification process and versioning policy). Also contributing to interoperability and schema design discussions for enterprise adoption patterns.',
   },
 ];
