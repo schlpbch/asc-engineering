@@ -112,7 +112,8 @@ export const publications: PublicationDict = {
     },
   ],
   conferencePapers: [
-    {
+    /*  
+   {
       authors: 'A. Schlapbach',
       title:
         'Formal Semantics for Agentic Tool Protocols: A Process Calculus Approach',
@@ -122,6 +123,8 @@ export const publications: PublicationDict = {
       venueHref: 'https://expresssos.github.io/',
       year: 2026,
     },
+    */
+
     {
       authors: 'A. Schlapbach',
       title:
