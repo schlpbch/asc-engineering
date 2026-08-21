@@ -35,7 +35,7 @@ export const contributions: Contribution[] = [
   {
     name: 'LLMbdaJS – A TypeScript reference implementation of the LLMbda Calculus',
     role: 'Author & Maintainer',
-    period: '2025–present',
+    period: '2026–present',
     url: 'https://github.com/schlpbch/LLMbdaJS',
     tags: [
       'LLMbda Calculus',
